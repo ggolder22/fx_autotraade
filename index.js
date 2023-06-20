@@ -50,21 +50,21 @@ app.post("/", (req, res) => {
      await connection.waitSynchronized();
  
      // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
-     console.log('Testing MetaAPI RPC API');
-     console.log('account information:', await connection.getAccountInformation());
-     console.log('positions:', await connection.getPositions());
-     //console.log(await connection.getPosition('1234567'));
-     console.log('open orders:', await connection.getOrders());
-     //console.log(await connection.getOrder('1234567'));
-     console.log('history orders by ticket:', await connection.getHistoryOrdersByTicket('1234567'));
-     console.log('history orders by position:', await connection.getHistoryOrdersByPosition('1234567'));
-     console.log('history orders (~last 3 months):', 
-       await connection.getHistoryOrdersByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date()));
-     console.log('history deals by ticket:', await connection.getDealsByTicket('1234567'));
-     console.log('history deals by position:', await connection.getDealsByPosition('1234567'));
-     console.log('history deals (~last 3 months):', 
-       await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date()));
-     console.log('server time', await connection.getServerTime());
+    //  console.log('Testing MetaAPI RPC API');
+    //  console.log('account information:', await connection.getAccountInformation());
+    //  console.log('positions:', await connection.getPositions());
+    //  //console.log(await connection.getPosition('1234567'));
+    //  console.log('open orders:', await connection.getOrders());
+    //  //console.log(await connection.getOrder('1234567'));
+    //  console.log('history orders by ticket:', await connection.getHistoryOrdersByTicket('1234567'));
+    //  console.log('history orders by position:', await connection.getHistoryOrdersByPosition('1234567'));
+    //  console.log('history orders (~last 3 months):', 
+    //    await connection.getHistoryOrdersByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date()));
+    //  console.log('history deals by ticket:', await connection.getDealsByTicket('1234567'));
+    //  console.log('history deals by position:', await connection.getDealsByPosition('1234567'));
+    //  console.log('history deals (~last 3 months):', 
+    //    await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date()));
+    //  console.log('server time', await connection.getServerTime());
  
      // calculate margin required for trade
      console.log('margin required for trade', await connection.calculateMargin({
