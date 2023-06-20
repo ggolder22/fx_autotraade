@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 app.post("/", (req, res) => {
   // Aquí puedes realizar acciones con los datos recibidos en el webhook
   // console.log(req.body);
-  const { orderType, tikcer, sl, tp1 } = req.body;
+  const { orderType, tikcer, RF, entry, sl, tp1, tp2 } = req.body;
 
-  console.log(orderType, tikcer, sl, tp1);
+  console.log(orderType, tikcer, RF, entry, sl, tp1, tp2 );
   // try {
   //   let result = await;
   //   connection.createLimitBuyOrder(tikcer, sl, tp1, 0.9, 2.0, {
