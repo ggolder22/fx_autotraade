@@ -130,8 +130,8 @@ app.post("/", async (req, res) => {
       //for (let i = 1; i < 4; i++) {
         //result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp[i])
 
-      size1 = +positionSize*+ps1
-      size2 = +positionSize*+ps2
+      size1 = (+positionSize*+ps1).toFixed(2)
+      size2 = (+positionSize*+ps2).toFixed(2)
       console.log("size1:", size1);
       console.log("size2:", size2);
 
