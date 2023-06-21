@@ -95,7 +95,7 @@ app.post("/", async (req, res) => {
     //  console.log('Testing MetaAPI RPC API');
     console.log('account information:', await connection.getAccountInformation());
     console.log('positions:', await connection.getPositions());
-    console.log("balance: ", await connection.getAccountInformation(balance))
+    console.log("balance: ", await connection.getAccountInformation("balance"))
     //  //console.log(await connection.getPosition('1234567'));
     console.log('open orders:', await connection.getOrders());
     //  //console.log(await connection.getOrder('1234567'));
