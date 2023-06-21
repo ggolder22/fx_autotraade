@@ -94,7 +94,7 @@ app.post("/", async (req, res) => {
     //console.log('account information:', await connection.getAccountInformation() );
     const { broker, currency, server, balance, equity, margin, freeMargin, leverage, marginLevel, type, name, login, credit, platform, marginMode, tradeAllowed, investorMode} = await connection.getAccountInformation()
     console.log('positions:', await connection.getPositions());
-    console.log("balance: ", balance)
+    //console.log("balance: ", balance)
     //  //console.log(await connection.getPosition('1234567'));
     //console.log('open orders:', await connection.getOrders());
     //  //console.log(await connection.getOrder('1234567'));
@@ -131,18 +131,19 @@ app.post("/", async (req, res) => {
 
 
   //  calculates the position size using stop loss and RISK FACTO
-
-  let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
   console.log("Risk Factor:", RF)
-  console.log("position size", positionSize);
+  console.log("balance:", balance)
+  let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
+  console.log("LoteSize:", positionSize);
+
  
      // calculate margin required for trade
-     console.log('margin required for trade', await connection.calculateMargin({
-       symbol: 'GBPUSD',
-       type: 'ORDER_TYPE_BUY',
-       volume: 0.1,
-       openPrice: 1.1
-     }));
+    //  console.log('margin required for trade', await connection.calculateMargin({
+    //    symbol: 'GBPUSD',
+    //    type: 'ORDER_TYPE_BUY',
+    //    volume: 0.1,
+    //    openPrice: 1.1
+    //  }));
  
     //  // trade
     //  console.log('Submitting pending order');
