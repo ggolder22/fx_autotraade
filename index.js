@@ -25,11 +25,11 @@ app.post("/", async (req, res) => {
   console.log(orderType, tikcer, RF, entry, sl, tp1, tp2 );
 
   //obtains account information from MetaTrader server
-  try {
-    const account_information = await connection.get_account_information();
-    } catch (err) {
-      console.error(err);
-    }
+//  try {
+//    const account_information = await connection.get_account_information("balance");
+//    } catch (err) {
+//      console.error(err);
+//    }
 
   //calculate multiplier
   
@@ -48,20 +48,20 @@ app.post("/", async (req, res) => {
   console.log("multiplier: ", multiplier)    
   
   //calculates the stop loss in pips
-  let stopLossPips = abs(round((sl - entry / multiplier)))
+//  let stopLossPips = abs(round((sl - entry / multiplier)))
   
  //Get Balance from account
 
- var balance = account_information("balance")
+// var balance = account_information("balance")
 
- console.log("balance de cuenta: ", balance);
+// console.log("balance de cuenta: ", balance);
   
 
 //  calculates the position size using stop loss and RISK FACTO
  
-let positionSize = math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
+//let positionSize = math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
 
-console.log("position size", positionSize);
+//console.log("position size", positionSize);
  //Codigo para ejecutar trades   {
 
 
@@ -95,6 +95,7 @@ console.log("position size", positionSize);
     //  console.log('Testing MetaAPI RPC API');
     console.log('account information:', await connection.getAccountInformation());
     console.log('positions:', await connection.getPositions());
+    console.log("balance: ", await connection.getAccountInformation(balance))
     //  //console.log(await connection.getPosition('1234567'));
     console.log('open orders:', await connection.getOrders());
     //  //console.log(await connection.getOrder('1234567'));
