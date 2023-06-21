@@ -160,9 +160,9 @@ app.post("/", async (req, res) => {
      console.log('Submitting pending order');
      try {
        let result = await
-       connection.createMarketBuyOrder(tikcer, 0.01, sl, tp1);
+       connection.createMarketBuyOrder(tikcer, 0.01, +sl, +tp1);
        console.log("sl:",sl);
-       console.log(typeof(sl));
+       console.log(typeof(+sl));
        console.log("tp1:", tp1);
 
        console.log('Trade successful, result code is ' + result.stringCode);
