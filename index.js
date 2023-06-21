@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.post("/", async (req, res) => {
   // We get data from webhook
   
-  const { orderType, tikcer, RF, entry, sl, tp1, tp2, tp3} = req.body;
+  const { orderType, tikcer, RF, entry, sl, tp1, ps1, tp2, ps2, tp3, ps3} = req.body;
 
   console.log(orderType, tikcer, RF, entry, sl, tp1, tp2, tp3);
 
@@ -128,9 +128,12 @@ app.post("/", async (req, res) => {
      try {
       
       //for (let i = 1; i < 4; i++) {
-        result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp1);
-        result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp2);
-        result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp3);
+        //result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp[i])
+
+
+        result = await connection.createMarketBuyOrder(tikcer, +positionSize*+ps1, +sl, +tp1);
+        result = await connection.createMarketBuyOrder(tikcer, +positionSize*+ps2, +sl, +tp2);
+        result = await connection.createMarketBuyOrder(tikcer, +positionSize*+ps3, +sl, +tp3);
       //}
       
        
