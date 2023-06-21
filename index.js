@@ -18,49 +18,14 @@ app.use(bodyParser.json());
 
 // Ruta para recibir las solicitudes del webhook
 app.post("/", async (req, res) => {
-  // Aquí puedes realizar acciones con los datos recibidos en el webhook
+  // We get data from webhook
   
-  const { orderType, tikcer, RF, entry, sl, tp1} = req.body;
+  const { orderType, tikcer, RF, entry, sl, tp1, tp2, tp3} = req.body;
 
-  console.log(orderType, tikcer, RF, entry, sl, tp1);
+  console.log(orderType, tikcer, RF, entry, sl, tp1, tp2, tp3);
 
-  //obtains account information from MetaTrader server
-//  try {
-//    const account_information = await connection.get_account_information("balance");
-//    } catch (err) {
-//      console.error(err);
-//    }
 
-//   //calculate multiplier
-  
-//   if(tikcer == 'XAUUSD')
-//       multiplier = 0.1
-
-//   else if(tikcer == 'XAGUSD')
-//       multiplier = 0.001
-
-//   //else if(str(trade['Entry']).index('.') >= 2):
-//   //    multiplier = 0.01
-
-//   else
-//       multiplier = 0.0001
-  
-//   console.log("multiplier: ", multiplier)    
-  
-//   //calculates the stop loss in pips
-//   let stopLossPips = Math.abs(Math.round((sl - entry / multiplier)))
-//   console.log("slpips", stopLossPips); 
- 
-
-//   //  calculates the position size using stop loss and RISK FACTO
- 
-//   let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
-//  console.log("position size", positionSize);
- 
- 
  //Codigo para ejecutar trades   {
-
-
  
  const api = new MetaApi(token);
  
@@ -88,9 +53,7 @@ app.post("/", async (req, res) => {
      await connection.waitSynchronized();
  
     // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
-    //  console.log('Testing MetaAPI RPC API');
-    
-    
+        
     //console.log('account information:', await connection.getAccountInformation() );
     const { broker, currency, server, balance, equity, margin, freeMargin, leverage, marginLevel, type, name, login, credit, platform, marginMode, tradeAllowed, investorMode} = await connection.getAccountInformation()
     console.log('positions:', await connection.getPositions());
@@ -124,8 +87,7 @@ app.post("/", async (req, res) => {
 
   console.log("multiplier: ", multiplier)    
 
- 
- 
+  
   //calculates the stop loss in pips
   let stopLossPips = Math.abs(Math.round(((sl - entry) / multiplier)))
 
@@ -135,6 +97,7 @@ app.post("/", async (req, res) => {
   //  calculates the position size using stop loss and RISK FACTO
   console.log("Risk Factor:", RF)
   console.log("balance:", balance)
+  
   let positionSize = Math.floor(((balance * RF) / stopLossPips) / 10 * 100) / 100;
   console.log("LoteSize:", positionSize);
 
@@ -163,11 +126,16 @@ app.post("/", async (req, res) => {
      // trade
      console.log('Submitting pending order');
      try {
-       let result = await
-       connection.createMarketBuyOrder(tikcer, +positionSize, +sl, +tp1);
+      
+      for (let i = 1; i < 4; i++) {
+        let result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp[i]);
+      }
+      
+       
        console.log("sl:",sl);
-       console.log(typeof(+sl));
        console.log("tp1:", tp1);
+       console.log("tp2:", tp2);
+       console.log("tp3:", tp3);
 
        console.log('Trade successful, result code is ' + result.stringCode);
      } catch (err) {
