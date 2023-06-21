@@ -125,7 +125,7 @@ app.post("/", async (req, res) => {
   console.log("multiplier: ", multiplier)    
 
  //calculates the stop loss in pips
-  let stopLossPips = Math.abs(Math.round((sl - entry / multiplier)))
+  let stopLossPips = Math.abs(Math.round(((sl - entry) / multiplier)))
 
   console.log("slpips", stopLossPips); 
 
@@ -162,6 +162,7 @@ app.post("/", async (req, res) => {
        let result = await
        connection.createMarketBuyOrder(tikcer, 0.01, sl, tp1);
        console.log("sl:",sl);
+       console.log(typeof(sl));
        console.log("tp1:", tp1);
 
        console.log('Trade successful, result code is ' + result.stringCode);
