@@ -31,31 +31,31 @@ app.post("/", async (req, res) => {
 //      console.error(err);
 //    }
 
-  //calculate multiplier
+//   //calculate multiplier
   
-  if(tikcer == 'XAUUSD')
-      multiplier = 0.1
+//   if(tikcer == 'XAUUSD')
+//       multiplier = 0.1
 
-  else if(tikcer == 'XAGUSD')
-      multiplier = 0.001
+//   else if(tikcer == 'XAGUSD')
+//       multiplier = 0.001
 
-  //else if(str(trade['Entry']).index('.') >= 2):
-  //    multiplier = 0.01
+//   //else if(str(trade['Entry']).index('.') >= 2):
+//   //    multiplier = 0.01
 
-  else
-      multiplier = 0.0001
+//   else
+//       multiplier = 0.0001
   
-  console.log("multiplier: ", multiplier)    
+//   console.log("multiplier: ", multiplier)    
   
-  //calculates the stop loss in pips
-  let stopLossPips = Math.abs(Math.round((sl - entry / multiplier)))
-  console.log("slpips", stopLossPips); 
+//   //calculates the stop loss in pips
+//   let stopLossPips = Math.abs(Math.round((sl - entry / multiplier)))
+//   console.log("slpips", stopLossPips); 
  
 
-  //  calculates the position size using stop loss and RISK FACTO
+//   //  calculates the position size using stop loss and RISK FACTO
  
-  let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
- console.log("position size", positionSize);
+//   let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
+//  console.log("position size", positionSize);
  
  
  //Codigo para ejecutar trades   {
@@ -122,18 +122,18 @@ app.post("/", async (req, res) => {
   else
     multiplier = 0.0001
 
-console.log("multiplier: ", multiplier)    
+  console.log("multiplier: ", multiplier)    
 
-//calculates the stop loss in pips
-let stopLossPips = Math.abs(Math.round((sl - entry / multiplier)))
+ //calculates the stop loss in pips
+  let stopLossPips = Math.abs(Math.round((sl - entry / multiplier)))
 
-console.log("slpips", stopLossPips); 
+  console.log("slpips", stopLossPips); 
 
 
-//  calculates the position size using stop loss and RISK FACTO
+  //  calculates the position size using stop loss and RISK FACTO
 
-let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
-console.log("position size", positionSize);
+  let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
+  console.log("position size", positionSize);
  
      // calculate margin required for trade
      console.log('margin required for trade', await connection.calculateMargin({
