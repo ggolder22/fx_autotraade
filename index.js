@@ -136,13 +136,16 @@ app.post("/", async (req, res) => {
       console.log("size1:", size1);
       console.log("size2:", size2);
       console.log("size3:", size3)
-
+      const posize = [size1, size2, size3];
+      const tptp = [tp1,tp2,tp3];
+      console.log(posize);
+      console.log(tptp);
       // result = await connection.createMarketBuyOrder(tikcer, +size1, +sl, +tp1);
       // result = await connection.createMarketBuyOrder(tikcer, +size2, +sl, +tp2);
       // result = await connection.createMarketBuyOrder(tikcer, +size3, +sl, +tp3);
 
-      for (let i = 1; i < 4; i++) {
-        result = await connection.createMarketBuyOrder(tikcer, +size[i], +sl, +tp[i]);
+      for (let i = 0; i < 3; i++) {
+        result = await connection.createMarketBuyOrder(tikcer, +posize[i], +sl, +tptp[i]);
       }
       //}
       
