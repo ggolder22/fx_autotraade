@@ -127,9 +127,11 @@ app.post("/", async (req, res) => {
      console.log('Submitting pending order');
      try {
       
-      for (let i = 1; i < 4; i++) {
-        result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp[i]);
-      }
+      //for (let i = 1; i < 4; i++) {
+        result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp1);
+        result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp2);
+        result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp3);
+      //}
       
        
        console.log("sl:",sl);
