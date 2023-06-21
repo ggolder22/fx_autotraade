@@ -20,9 +20,9 @@ app.use(bodyParser.json());
 app.post("/", async (req, res) => {
   // Aquí puedes realizar acciones con los datos recibidos en el webhook
   
-  const { orderType, tikcer, RF, entry, sl, tp1, tp2 } = req.body;
+  const { orderType, tikcer, RF, entry, sl, tp1} = req.body;
 
-  console.log(orderType, tikcer, RF, entry, sl, tp1, tp2 );
+  console.log(orderType, tikcer, RF, entry, sl, tp1);
 
   //obtains account information from MetaTrader server
 //  try {
@@ -48,7 +48,7 @@ app.post("/", async (req, res) => {
   console.log("multiplier: ", multiplier)    
   
   //calculates the stop loss in pips
-  let stopLossPips = abs(round((sl - entry / multiplier)))
+  let stopLossPips = Math.abs(Math.round((sl - entry / multiplier)))
   console.log("slpips", stopLossPips);
  
 
@@ -133,7 +133,7 @@ app.post("/", async (req, res) => {
      console.log('Submitting pending order');
      try {
        let result = await
-       connection.createMarketBuyOrder(tikcer, 0.01, sl.tostring(), tp1.tostring());
+       connection.createMarketBuyOrder(tikcer, 0.01, sl, tp1);
        console.log("sl:",sl);
        console.log("tp1:", tp1);
 
