@@ -135,7 +135,7 @@ app.post("/", async (req, res) => {
   //  calculates the position size using stop loss and RISK FACTO
   console.log("Risk Factor:", RF)
   console.log("balance:", balance)
-  let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
+  let positionSize = Math.floor(((balance * RF) / stopLossPips) / 10 * 100) / 100;
   console.log("LoteSize:", positionSize);
 
  
