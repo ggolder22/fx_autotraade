@@ -135,10 +135,14 @@ app.post("/", async (req, res) => {
       size3 = (+positionSize*+ps3).toFixed(2)
       console.log("size1:", size1);
       console.log("size2:", size2);
+      console.log("size3:", size3)
 
-      result = await connection.createMarketBuyOrder(tikcer, +size1, +sl, +tp1);
-      result = await connection.createMarketBuyOrder(tikcer, +size2, +sl, +tp2);
-      result = await connection.createMarketBuyOrder(tikcer, +size3, +sl, +tp3);
+      // result = await connection.createMarketBuyOrder(tikcer, +size1, +sl, +tp1);
+      // result = await connection.createMarketBuyOrder(tikcer, +size2, +sl, +tp2);
+      // result = await connection.createMarketBuyOrder(tikcer, +size3, +sl, +tp3);
+
+      for (let i = 1; i < 4; i++) {
+        result = await connection.createMarketBuyOrder(tikcer, +size[i], +sl, +tp[i]);
       //}
       
     //   const tp = [{tp: tp1, ps: ps1}, {tp: tp2, ps: ps2}, {tp: tp3, ps: ps3}];
