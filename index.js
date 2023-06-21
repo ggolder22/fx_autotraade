@@ -125,7 +125,8 @@ app.post("/", async (req, res) => {
   console.log("multiplier: ", multiplier)    
 
  //get entry price
- price = await connection.getSymbolPrice(tikcer)
+ const { price } = await connection.getSymbolPrice(tikcer)
+ //price = await connection.getSymbolPrice(tikcer)
  console.log("entry price:", price);
   //calculates the stop loss in pips
   let stopLossPips = Math.abs(Math.round(((sl - price) / multiplier)))
