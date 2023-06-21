@@ -49,12 +49,12 @@ app.post("/", async (req, res) => {
   
   //calculates the stop loss in pips
   let stopLossPips = Math.abs(Math.round((sl - entry / multiplier)))
-  console.log("slpips", stopLossPips);
+  console.log("slpips", stopLossPips); 
  
 
   //  calculates the position size using stop loss and RISK FACTO
  
-  let positionSize = math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
+  let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
  console.log("position size", positionSize);
  
  
