@@ -133,6 +133,7 @@ app.post("/", async (req, res) => {
   //  calculates the position size using stop loss and RISK FACTO
 
   let positionSize = Math.floor((((balance * RF) / stopLossPips) / 10 * 100) / 100);
+  console.log("Risk Factor:", RF)
   console.log("position size", positionSize);
  
      // calculate margin required for trade
@@ -160,7 +161,7 @@ app.post("/", async (req, res) => {
      console.log('Submitting pending order');
      try {
        let result = await
-       connection.createMarketBuyOrder(tikcer, 0.01, +sl, +tp1);
+       connection.createMarketBuyOrder(tikcer, +positionSize, +sl, +tp1);
        console.log("sl:",sl);
        console.log(typeof(+sl));
        console.log("tp1:", tp1);
