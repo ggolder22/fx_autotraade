@@ -149,6 +149,9 @@ app.post("/", async (req, res) => {
        console.log("tp1:", tp1);
        console.log("tp2:", tp2);
        console.log("tp3:", tp3);
+       console.log("ps1:", ps1);
+       console.log("ps2:", ps2);
+       console.log("ps3:", ps3);
 
        console.log('Trade successful, result code is ' + result.stringCode);
      } catch (err) {
