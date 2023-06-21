@@ -143,6 +143,7 @@ app.post("/", async (req, res) => {
 
       for (let i = 1; i < 4; i++) {
         result = await connection.createMarketBuyOrder(tikcer, +size[i], +sl, +tp[i]);
+      }
       //}
       
     //   const tp = [{tp: tp1, ps: ps1}, {tp: tp2, ps: ps2}, {tp: tp3, ps: ps3}];
