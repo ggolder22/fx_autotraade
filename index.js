@@ -8,7 +8,7 @@ let MetaApi = require('metaapi.cloud-sdk').default;
 
 let token = 'eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNjczNzg0NGMxZDcyNGE0NDg4YzM1ZGMyZDU0ODg0MSIsInBlcm1pc3Npb25zIjpbXSwiYWNjZXNzUnVsZXMiOlt7Im1ldGhvZHMiOlsidHJhZGluZy1hY2NvdW50LW1hbmFnZW1lbnQtYXBpOnJlc3Q6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbIio6JFVTRVJfSUQkOioiXX0seyJtZXRob2RzIjpbIm1ldGFhcGktYXBpOnJlc3Q6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbIio6JFVTRVJfSUQkOioiXX0seyJtZXRob2RzIjpbIm1ldGFhcGktYXBpOndzOnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIiwid3JpdGVyIl0sInJlc291cmNlcyI6WyIqOiRVU0VSX0lEJDoqIl19LHsibWV0aG9kcyI6WyJtZXRhYXBpLWFwaTp3czpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciIsIndyaXRlciJdLCJyZXNvdXJjZXMiOlsiKjokVVNFUl9JRCQ6KiJdfSx7Im1ldGhvZHMiOlsibWV0YXN0YXRzLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIl0sInJlc291cmNlcyI6WyIqOiRVU0VSX0lEJDoqIl19LHsibWV0aG9kcyI6WyJyaXNrLW1hbmFnZW1lbnQtYXBpOnJlc3Q6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbIio6JFVTRVJfSUQkOioiXX0seyJtZXRob2RzIjpbImNvcHlmYWN0b3J5LWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIiwid3JpdGVyIl0sInJlc291cmNlcyI6WyIqOiRVU0VSX0lEJDoqIl19LHsibWV0aG9kcyI6WyJtdC1tYW5hZ2VyLWFwaTpyZXN0OmRlYWxpbmc6KjoqIiwibXQtbWFuYWdlci1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciIsIndyaXRlciJdLCJyZXNvdXJjZXMiOlsiKjokVVNFUl9JRCQ6KiJdfV0sInRva2VuSWQiOiIyMDIxMDIxMyIsImltcGVyc29uYXRlZCI6ZmFsc2UsInJlYWxVc2VySWQiOiJlNjczNzg0NGMxZDcyNGE0NDg4YzM1ZGMyZDU0ODg0MSIsImlhdCI6MTY4NzIyMDkwMH0.GpQAGYeJst1fW-bjS0mt6ZEdWNkWtx-W0E36291PSh-c-ehoJiSApdKbm_qxvO8dvE8CC8AF70Hr9aH4tRG2AdObccLuqLjy-L6dxDuJnnvjQ-HtxMFZldZEcBfbjuhOwsEi69sNw7cp7bfTkXyxN1iaO1TuL5jGj30jy-kSEiVh8C_pIYVJHaU_XFrx8fWwxOvqLb79wThLhaH2aeVde65U7kXS11AHNwY5XHjV041mT8UxcK6orRZdokd-BtvlS7EbgAgizxLONxNwgoCxdomLZLfGy-jEFHAUVyfuF5YogOXHMetLFUTsPcnkR17_1F_XpUMwXKRyinSViJlNk9XUiaekXnG02XFtvQgPhJ1ReoG1QYku_qAzwZ0j4pr-nvEHA-qYe4Wn14Tob6t8Df-VjAZVS92XGKefeE97V4wDor5zKuAADk-bev-f02UnaV_hUwNdLobMXQWK17jUOGYPPgoUhyju8Rg6gv52sUW_TnQVQCUcf3v_IQYkcz_T-tnMs9CYuJcwBw8tfiLVZHE8MxEH2zs4IIWVdCMbzUwOpQYikLmw3XzdHf2myqeyYS4kgsz00fmIQLFq7MKMRlU0jO1Uj0MBjIiDTbQ1idmLBGNUWqwGh4LmtHpcL_0NV7S8ECiQi6ihGzqpQZIY0Ca9vlHdKoUC9Mg90H6mqG4';
 let accountId = 'c4cc7b70-593e-468f-b93f-19df817853b7';
-const { broker, currency, server, balance, equity, margin, freeMargin, leverage, marginLevel, type, name, login, credit, platform, marginMode, tradeAllowed, investorMode} = await connection.getAccountInformation()
+
 
 //allowed FX symbols
 SYMBOLS = ['AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD', 'AUDUSD', 'CADCHF', 'CADJPY', 'CHFJPY', 'EURAUD', 'EURCAD', 'EURCHF', 'EURGBP', 'EURJPY', 'EURNZD', 'EURUSD', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPJPY', 'GBPNZD', 'GBPUSD', 'NOW', 'NZDCAD', 'NZDCHF', 'NZDJPY', 'NZDUSD', 'USDCAD', 'USDCHF', 'USDJPY', 'XAGUSD', 'XAUUSD', "BTCUSD"]
@@ -92,6 +92,7 @@ app.post("/", async (req, res) => {
     
     
     //console.log('account information:', await connection.getAccountInformation() );
+    const { broker, currency, server, balance, equity, margin, freeMargin, leverage, marginLevel, type, name, login, credit, platform, marginMode, tradeAllowed, investorMode} = await connection.getAccountInformation()
     console.log('positions:', await connection.getPositions());
     console.log("balance: ", balance)
     //  //console.log(await connection.getPosition('1234567'));
