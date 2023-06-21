@@ -128,7 +128,7 @@ app.post("/", async (req, res) => {
      try {
       
       for (let i = 1; i < 4; i++) {
-        let result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp[i]);
+        result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp[i]);
       }
       
        
