@@ -93,9 +93,10 @@ app.post("/", async (req, res) => {
  
     // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
     //  console.log('Testing MetaAPI RPC API');
-    console.log('account information:', await connection.getAccountInformation());
+    let account_information = await connection.getAccountInformation()
+    console.log('account information:', account_information );
     console.log('positions:', await connection.getPositions());
-    console.log("balance: ", await connection.getAccountInformation(["balance"]))
+    console.log("balance: ", balance)
     //  //console.log(await connection.getPosition('1234567'));
     console.log('open orders:', await connection.getOrders());
     //  //console.log(await connection.getOrder('1234567'));
