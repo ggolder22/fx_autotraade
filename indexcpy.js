@@ -57,7 +57,19 @@ app.post("/", async (req, res) => {
     //console.log('account information:', await connection.getAccountInformation() );
     const { broker, currency, server, balance, equity, margin, freeMargin, leverage, marginLevel, type, name, login, credit, platform, marginMode, tradeAllowed, investorMode} = await connection.getAccountInformation()
     console.log('positions:', await connection.getPositions());
-
+    //console.log("balance: ", balance)
+    //  //console.log(await connection.getPosition('1234567'));
+    //console.log('open orders:', await connection.getOrders());
+    //  //console.log(await connection.getOrder('1234567'));
+    //  console.log('history orders by ticket:', await connection.getHistoryOrdersByTicket('1234567'));
+    //  console.log('history orders by position:', await connection.getHistoryOrdersByPosition('1234567'));
+    //  console.log('history orders (~last 3 months):', 
+    //    await connection.getHistoryOrdersByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date()));
+    //  console.log('history deals by ticket:', await connection.getDealsByTicket('1234567'));
+    //  console.log('history deals by position:', await connection.getDealsByPosition('1234567'));
+    //  console.log('history deals (~last 3 months):', 
+    //    await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date()));
+    //  console.log('server time', await connection.getServerTime());
 
     //calculate multiplier
   
@@ -82,17 +94,42 @@ app.post("/", async (req, res) => {
   console.log("slpips", stopLossPips); 
 
 
-  //  calculates the position size using stop loss and RISK FACTOR
+  //  calculates the position size using stop loss and RISK FACTO
   console.log("Risk Factor:", RF)
   console.log("balance:", balance)
   
   let positionSize = Math.floor(((balance * RF) / stopLossPips) / 10 * 100) / 100;
   console.log("LoteSize:", positionSize);
 
+ 
+     // calculate margin required for trade
+    //  console.log('margin required for trade', await connection.calculateMargin({
+    //    symbol: 'GBPUSD',
+    //    type: 'ORDER_TYPE_BUY',
+    //    volume: 0.1,
+    //    openPrice: 1.1
+    //  }));
+ 
+    //  // trade
+    //  console.log('Submitting pending order');
+    //  try {
+    //    let result = await
+    //    connection.createMarketBuyOrder(tikcer, 0.01, sl, tp1, {
+    //      comment: 'comm',
+    //      clientId: 'TE_GBPUSD_7hyINWqAlE'
+    //    });
+    //    console.log('Trade successful, result code is ' + result.stringCode);
+    //  } catch (err) {
+    //    console.log('Trade failed with result code ' + err.stringCode);
+    //  }
+
      // trade
      console.log('Submitting pending order');
      try {
       
+      //for (let i = 1; i < 4; i++) {
+        //result = await connection.createMarketBuyOrder(tikcer, +positionSize/3, +sl, +tp[i])
+
       size1 = (+positionSize*+ps1).toFixed(2)
       size2 = (+positionSize*+ps2).toFixed(2)
       size3 = (+positionSize*+ps3).toFixed(2)
@@ -103,21 +140,25 @@ app.post("/", async (req, res) => {
       const tptp = [tp1,tp2,tp3];
       console.log(posize);
       console.log(tptp);
+      // result = await connection.createMarketBuyOrder(tikcer, +size1, +sl, +tp1);
+      // result = await connection.createMarketBuyOrder(tikcer, +size2, +sl, +tp2);
+      // result = await connection.createMarketBuyOrder(tikcer, +size3, +sl, +tp3);
 
-      if (orderType == "BUY") 
-        for (let i = 0; i < 3; i++) {
-          result = await connection.createMarketBuyOrder(tikcer, +posize[i], +sl, +tptp[i]);
-        }
-      else if (orderType =="SELL") {
-        for (let i = 0; i < 3; i++) {
-          result = await connection.createMarketSellOrder(tikcer, +posize[i], +sl, +tptp[i]);
-        }
-        
-      } else if (orderType == "BUY LIMIT"){
-        
+      for (let i = 0; i < 3; i++) {
+        result = await connection.createMarketBuyOrder(tikcer, +posize[i], +sl, +tptp[i]);
       }
+      //}
+      
+    //   const tp = [{tp: tp1, ps: ps1}, {tp: tp2, ps: ps2}, {tp: tp3, ps: ps3}];
 
-        
+    //   tp.map(async (e) => {
+    //     return{
+    //        await connection.createMarketBuyOrder(tikcer, (Number(positionSize))*(Number(e.ps)), Number(sl), Number(e.tp))
+    //     }
+    //  })
+      
+      
+
        console.log("sl:",sl);
        console.log("tp1:", tp1);
        console.log("tp2:", tp2);
