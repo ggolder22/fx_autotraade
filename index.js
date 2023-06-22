@@ -50,6 +50,7 @@ SYMBOLS = [
 app.use(bodyParser.json());
 
 //testMetaApiSynchronization
+const api = new MetaApi(token);
 async function testMetaApiSynchronization() {
   try {
     const account = await api.metatraderAccountApi.getAccount(accountId);
