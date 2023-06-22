@@ -131,12 +131,13 @@ async function testMetaApiSynchronization() {
         marginMode,
         tradeAllowed,
         investorMode,
-      },
-      process.exit()
-    );
-  } catch (err) {
-    console.error(err);
-  }
+        process
+      }
+      );
+    } catch (err) {
+      console.error(err);
+    }
+    
 }
 
 // Ruta para recibir las solicitudes del webhook
@@ -293,7 +294,8 @@ app.post("/", async (req, res) => {
 
 app.get("/information", async (req, res) => {
   try {
-    const { broker, balance, equity } = await testMetaApiSynchronization();
+    const { broker, balance, equity, process } = await testMetaApiSynchronization();
+    process.exit()
     console.log("GET", broker);
     res.status(200).json({ broker: broker, balance: balance, equity: equity });
   } catch (error) {
