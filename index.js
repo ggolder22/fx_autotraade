@@ -101,7 +101,25 @@ async function testMetaApiSynchronization() {
       investorMode,
     } = await connection.getAccountInformation();
     // console.log("positions:", await connection.getPositions());
-    return broker;
+    return {
+      broker,
+      currency,
+      server,
+      balance,
+      equity,
+      margin,
+      freeMargin,
+      leverage,
+      marginLevel,
+      type,
+      name,
+      login,
+      credit,
+      platform,
+      marginMode,
+      tradeAllowed,
+      investorMode,
+    };
   } catch (err) {
     console.error(err);
   }
@@ -262,9 +280,9 @@ app.post("/", async (req, res) => {
 
 app.get("/information", async (req, res) => {
   try {
-    const broker = await testMetaApiSynchronization();
+    const { broker, balance, equity } = await testMetaApiSynchronization();
     console.log("GET", broker);
-    res.status(200).json({ broker: broker });
+    res.status(200).json({ broker: broker, balance: balance, equity: equity });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
