@@ -192,14 +192,14 @@ app.post("/", async (req, res) => {
         await connection.close();
         await account.undeploy();
       }
-      return await connection.getPositions();
+      return broker;
     } catch (err) {
       console.error(err);
     }
     process.exit();
   }
 
-  testMetaApiSynchronization();
+  const broker = testMetaApiSynchronization();
 
   //}
 });
@@ -207,7 +207,7 @@ app.post("/", async (req, res) => {
 router.get("/positions", async (req, res) => {
   try {
     // res.status(200).json(await testMetaApiSynchronization());
-    console.log("GET", await testMetaApiSynchronization());
+    console.log("GET", broker);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
