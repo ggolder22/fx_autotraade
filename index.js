@@ -204,7 +204,7 @@ app.post("/", async (req, res) => {
   //}
 });
 
-router.use("/positions", async (req, res) => {
+router.get("/positions", async (req, res) => {
   try {
     // res.status(200).json(await testMetaApiSynchronization());
     console.log("GET", await testMetaApiSynchronization());
