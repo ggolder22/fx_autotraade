@@ -1,3 +1,5 @@
+
+
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -322,9 +324,9 @@ app.get("/information", async (req, res) => {
     await connection.connect();
     
     const { broker, balance, equity, login} = await connection.getAccountInformation();
-    positions = await connection.getPosition();
+    
     console.log("GET", broker);
-    console.log("POSITIONS:", positions);
+    
     
     res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login});
   } catch (error) {
