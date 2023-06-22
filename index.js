@@ -321,13 +321,16 @@ app.get("/information", async (req, res) => {
     let connection = account.getRPCConnection();
     await connection.connect();
     
-    const { broker, balance, equity} = await connection.getAccountInformation();
+    const { broker, balance, equity, } = await connection.getAccountInformation();
+    const { id, symbol, unrealizedProfit} = await connection.getPosition();
     console.log("GET", broker);
-    res.status(200).json({ broker: broker, balance: balance, equity: equity });
+    
+    res.status(200).json({ broker: broker, balance: balance, equity: equity, id:id , symbol:symbol, unrealizedProfit:unrealizedProfit });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
+
 
 // Iniciar el servidor
 app.listen(port, () => {
