@@ -216,85 +216,112 @@ app.post("/", async (req, res) => {
   //}
 });
 
+// app.get("/information", async (req, res) => {
+//   try {
+//     const api = new MetaApi(token);
+//     async function testMetaApiSynchronization() {
+//       try {
+//         const account = await api.metatraderAccountApi.getAccount(accountId);
+//         const initialState = account.state;
+//         const deployedStates = ["DEPLOYING", "DEPLOYED"];
+    
+//         if (!deployedStates.includes(initialState)) {
+//           // wait until account is deployed and connected to broker
+//           console.log("Deploying account");
+//           await account.deploy();
+//         }
+    
+//         console.log(
+//           "Waiting for API server to connect to broker (may take couple of minutes)"
+//         );
+//         await account.waitConnected();
+    
+//         // connect to MetaApi API
+//         let connection = account.getRPCConnection();
+//         await connection.connect();
+    
+//         // wait until terminal state synchronized to the local state
+//         console.log(
+//           "Waiting for SDK to synchronize to terminal state (may take some time depending on your history size)"
+//         );
+//         await connection.waitSynchronized();
+    
+//         // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
+    
+//         //console.log('account information:', await connection.getAccountInformation() );
+//         const {
+//           broker,
+//           currency,
+//           server,
+//           balance,
+//           equity,
+//           margin,
+//           freeMargin,
+//           leverage,
+//           marginLevel,
+//           type,
+//           name,
+//           login,
+//           credit,
+//           platform,
+//           marginMode,
+//           tradeAllowed,
+//           investorMode,
+//         } = await connection.getAccountInformation();
+//         // console.log("positions:", await connection.getPositions());
+//         return {
+//           broker,
+//           currency,
+//           server,
+//           balance,
+//           equity,
+//           margin,
+//           freeMargin,
+//           leverage,
+//           marginLevel,
+//           type,
+//           name,
+//           login,
+//           credit,
+//           platform,
+//           marginMode,
+//           tradeAllowed,
+//           investorMode,
+//         }
+        
+//         } catch (err) {
+//           console.error(err);
+//         }
+//         process.exit()
+//     }
+//     const { broker, balance, equity} = await testMetaApiSynchronization();
+//     console.log("GET", broker);
+//     res.status(200).json({ broker: broker, balance: balance, equity: equity });
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// });
+
 app.get("/information", async (req, res) => {
   try {
     const api = new MetaApi(token);
-    async function testMetaApiSynchronization() {
-      try {
-        const account = await api.metatraderAccountApi.getAccount(accountId);
-        const initialState = account.state;
-        const deployedStates = ["DEPLOYING", "DEPLOYED"];
+    const account = await api.metatraderAccountApi.getAccount(accountId);
+    const initialState = account.state;
+    const deployedStates = ["DEPLOYING", "DEPLOYED"];
     
-        if (!deployedStates.includes(initialState)) {
-          // wait until account is deployed and connected to broker
-          console.log("Deploying account");
-          await account.deploy();
-        }
-    
-        console.log(
-          "Waiting for API server to connect to broker (may take couple of minutes)"
-        );
-        await account.waitConnected();
-    
-        // connect to MetaApi API
-        let connection = account.getRPCConnection();
-        await connection.connect();
-    
-        // wait until terminal state synchronized to the local state
-        console.log(
-          "Waiting for SDK to synchronize to terminal state (may take some time depending on your history size)"
-        );
-        await connection.waitSynchronized();
-    
-        // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
-    
-        //console.log('account information:', await connection.getAccountInformation() );
-        const {
-          broker,
-          currency,
-          server,
-          balance,
-          equity,
-          margin,
-          freeMargin,
-          leverage,
-          marginLevel,
-          type,
-          name,
-          login,
-          credit,
-          platform,
-          marginMode,
-          tradeAllowed,
-          investorMode,
-        } = await connection.getAccountInformation();
-        // console.log("positions:", await connection.getPositions());
-        return {
-          broker,
-          currency,
-          server,
-          balance,
-          equity,
-          margin,
-          freeMargin,
-          leverage,
-          marginLevel,
-          type,
-          name,
-          login,
-          credit,
-          platform,
-          marginMode,
-          tradeAllowed,
-          investorMode,
-        }
+    if (!deployedStates.includes(initialState)) {
+     // wait until account is deployed and connected to broker
+     console.log("Deploying account");
+     await account.deploy();
+     }
         
-        } catch (err) {
-          console.error(err);
-        }
-        process.exit()
-    }
-    const { broker, balance, equity} = await testMetaApiSynchronization();
+    await account.waitConnected();
+        
+    // connect to MetaApi API
+    let connection = account.getRPCConnection();
+    await connection.connect();
+    
+    const { broker, balance, equity} = await connection.getAccountInformation();
     console.log("GET", broker);
     res.status(200).json({ broker: broker, balance: balance, equity: equity });
   } catch (error) {
