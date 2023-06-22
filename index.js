@@ -62,6 +62,9 @@ app.use(bodyParser.json());
 
 //Information to FRONT
 const api = new MetaApi(token);
+
+let info = {};
+
 async function testMetaApiSynchronization() {
   try {
     const account = await api.metatraderAccountApi.getAccount(accountId);
@@ -92,7 +95,7 @@ async function testMetaApiSynchronization() {
     // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
 
     //console.log('account information:', await connection.getAccountInformation() );
-    const {
+    info = {
       broker,
       currency,
       server,
@@ -112,32 +115,12 @@ async function testMetaApiSynchronization() {
       investorMode,
     } = await connection.getAccountInformation();
     // console.log("positions:", await connection.getPositions());
-    return (
-      {
-        broker,
-        currency,
-        server,
-        balance,
-        equity,
-        margin,
-        freeMargin,
-        leverage,
-        marginLevel,
-        type,
-        name,
-        login,
-        credit,
-        platform,
-        marginMode,
-        tradeAllowed,
-        investorMode,
-        process
-      }
-      );
+   
+    
     } catch (err) {
       console.error(err);
     }
-    
+    process.exit()
 }
 
 // Ruta para recibir las solicitudes del webhook
@@ -294,10 +277,10 @@ app.post("/", async (req, res) => {
 
 app.get("/information", async (req, res) => {
   try {
-    const { broker, balance, equity, process } = await testMetaApiSynchronization();
-    process.exit()
+    //const { broker, balance, equity} = await testMetaApiSynchronization();
+    
     console.log("GET", broker);
-    res.status(200).json({ broker: broker, balance: balance, equity: equity });
+    res.status(200).json({ broker: info.broker, balance: info.balance, equity: info.equity });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
