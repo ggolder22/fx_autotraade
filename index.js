@@ -112,29 +112,31 @@ async function testMetaApiSynchronization() {
       investorMode,
     } = await connection.getAccountInformation();
     // console.log("positions:", await connection.getPositions());
-    return {
-      broker,
-      currency,
-      server,
-      balance,
-      equity,
-      margin,
-      freeMargin,
-      leverage,
-      marginLevel,
-      type,
-      name,
-      login,
-      credit,
-      platform,
-      marginMode,
-      tradeAllowed,
-      investorMode,
-    };
+    return (
+      {
+        broker,
+        currency,
+        server,
+        balance,
+        equity,
+        margin,
+        freeMargin,
+        leverage,
+        marginLevel,
+        type,
+        name,
+        login,
+        credit,
+        platform,
+        marginMode,
+        tradeAllowed,
+        investorMode,
+      },
+      process.exit()
+    );
   } catch (err) {
     console.error(err);
   }
-  process.exit();
 }
 
 // Ruta para recibir las solicitudes del webhook
