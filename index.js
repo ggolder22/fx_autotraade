@@ -264,6 +264,7 @@ app.get("/information", async (req, res) => {
   try {
     const broker = await testMetaApiSynchronization();
     console.log("GET", broker);
+    res.status(200).json({ broker: broker });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
