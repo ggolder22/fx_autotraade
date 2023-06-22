@@ -60,7 +60,7 @@ SYMBOLS = [
 // Configurar body-parser para analizar los datos
 app.use(bodyParser.json());
 
-//testMetaApiSynchronization
+//Information to FRONT
 const api = new MetaApi(token);
 async function testMetaApiSynchronization() {
   try {
