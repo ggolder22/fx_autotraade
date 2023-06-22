@@ -1,7 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const { Router } = require("express");
-const router = Router();
 
 const app = express();
 const port = 3000;
@@ -192,22 +190,20 @@ app.post("/", async (req, res) => {
         await connection.close();
         await account.undeploy();
       }
-      return broker;
     } catch (err) {
       console.error(err);
     }
     process.exit();
   }
 
-  const broker = testMetaApiSynchronization();
+  testMetaApiSynchronization();
 
   //}
 });
 
-router.get("/positions", async (req, res) => {
+app.get("/positions", async (req, res) => {
   try {
-    // res.status(200).json(await testMetaApiSynchronization());
-    console.log("GET", broker);
+    console.log("GET");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
