@@ -326,7 +326,7 @@ app.get("/information", async (req, res) => {
     console.log("GET", broker);
     console.log("POSITIONS:", positions);
     
-    res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login});
+    res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login, positions:positions});
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
