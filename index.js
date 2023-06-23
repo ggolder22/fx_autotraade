@@ -67,6 +67,157 @@ app.use(bodyParser.json());
 
 
 // Ruta para recibir las solicitudes del webhook
+// app.post("/", async (req, res) => {
+//   // We get data from webhook
+
+//   const { orderType, tikcer, RF, entry, sl, tp1, ps1, tp2, ps2, tp3, ps3 } =
+//     req.body;
+
+//   console.log(orderType, tikcer, RF, entry, sl, tp1, tp2, tp3, ps1, ps2, ps3);
+
+//   //Codigo para ejecutar trades   {
+
+//   const api = new MetaApi(token);
+
+//   async function testMetaApiSynchronization() {
+//     try {
+//       const account = await api.metatraderAccountApi.getAccount(accountId);
+//       const initialState = account.state;
+//       const deployedStates = ["DEPLOYING", "DEPLOYED"];
+
+//       if (!deployedStates.includes(initialState)) {
+//         // wait until account is deployed and connected to broker
+//         console.log("Deploying account");
+//         await account.deploy();
+//       }
+
+//       console.log(
+//         "Waiting for API server to connect to broker (may take couple of minutes)"
+//       );
+//       await account.waitConnected();
+
+//       // connect to MetaApi API
+//       let connection = account.getRPCConnection();
+//       await connection.connect();
+
+//       // wait until terminal state synchronized to the local state
+//       console.log(
+//         "Waiting for SDK to synchronize to terminal state (may take some time depending on your history size)"
+//       );
+//       await connection.waitSynchronized();
+
+//       // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
+
+//       //console.log('account information:', await connection.getAccountInformation() );
+//       const {
+//         broker,
+//         currency,
+//         server,
+//         balance,
+//         equity,
+//         margin,
+//         freeMargin,
+//         leverage,
+//         marginLevel,
+//         type,
+//         name,
+//         login,
+//         credit,
+//         platform,
+//         marginMode,
+//         tradeAllowed,
+//         investorMode,
+//       } = await connection.getAccountInformation();
+//       console.log("positions:", await connection.getPositions());
+
+//       //calculate multiplier
+
+//       if (tikcer == "XAUUSD") multiplier = 0.1;
+//       else if (tikcer == "XAGUSD") multiplier = 0.001;
+//       //else if(str(trade['Entry']).index('.') >= 2):
+//       //    multiplier = 0.01
+//       else multiplier = 0.0001;
+
+//       console.log("multiplier: ", multiplier);
+
+//       //calculates the stop loss in pips
+//       let stopLossPips = Math.abs(Math.round((sl - entry) / multiplier));
+
+//       console.log("slpips", stopLossPips);
+
+//       //  calculates the position size using stop loss and RISK FACTOR
+//       console.log("Risk Factor:", RF);
+//       console.log("balance:", balance);
+
+//       let positionSize =
+//         Math.floor(((balance * RF) / stopLossPips / 10) * 100) / 100;
+//       console.log("LoteSize:", positionSize);
+
+//       // trade
+//       console.log("Submitting pending order");
+//       try {
+//         size1 = (+positionSize * +ps1).toFixed(2);
+//         size2 = (+positionSize * +ps2).toFixed(2);
+//         size3 = (+positionSize * +ps3).toFixed(2);
+//         console.log("size1:", size1);
+//         console.log("size2:", size2);
+//         console.log("size3:", size3);
+//         const posize = [size1, size2, size3];
+//         const tptp = [tp1, tp2, tp3];
+//         console.log(posize);
+//         console.log(tptp);
+
+//         if (orderType == "BUY")
+//           for (let i = 0; i < 3; i++) {
+//             result = await connection.createMarketBuyOrder(
+//               tikcer,
+//               +posize[i],
+//               +sl,
+//               +tptp[i]
+//             );
+//           }
+//         else if (orderType == "SELL") {
+//           for (let i = 0; i < 3; i++) {
+//             result = await connection.createMarketSellOrder(
+//               tikcer,
+//               +posize[i],
+//               +sl,
+//               +tptp[i]
+//             );
+//           }
+//         } else if (orderType == "BUY LIMIT") {
+//         }
+
+//         console.log("sl:", sl);
+//         console.log("tp1:", tp1);
+//         console.log("tp2:", tp2);
+//         console.log("tp3:", tp3);
+//         console.log("ps1:", ps1);
+//         console.log("ps2:", ps2);
+//         console.log("ps3:", ps3);
+
+//         console.log("Trade successful, result code is " + result.stringCode);
+//       } catch (err) {
+//         console.log("Trade failed with result code " + err.stringCode);
+//       }
+
+//       if (!deployedStates.includes(initialState)) {
+//         // undeploy account if it was undeployed
+//         console.log("Undeploying account");
+//         await connection.close();
+//         await account.undeploy();
+//       }
+//     } catch (err) {
+//       console.error(err);
+//     }
+//     process.exit();
+//   }
+
+//   testMetaApiSynchronization();
+
+//   //}
+// });
+
 app.post("/", async (req, res) => {
   // We get data from webhook
 
@@ -262,7 +413,7 @@ app.get("/information", async (req, res) => {
 
        
          
-    res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login, pos:{pos}});
+    res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login, pos:pos});
     
   } catch (error) {
     res.status(500).json({ error: error.message });
