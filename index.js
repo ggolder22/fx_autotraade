@@ -230,32 +230,12 @@ app.post("/", async (req, res) => {
 
   const api = new MetaApi(token);
 
-  async function testMetaApiSynchronization() {
-    try {
-      const account = await api.metatraderAccountApi.getAccount(accountId);
-      const initialState = account.state;
-      const deployedStates = ["DEPLOYING", "DEPLOYED"];
-
-      if (!deployedStates.includes(initialState)) {
-        // wait until account is deployed and connected to broker
-        console.log("Deploying account");
-        await account.deploy();
-      }
-
-      console.log(
-        "Waiting for API server to connect to broker (may take couple of minutes)"
-      );
-      await account.waitConnected();
-
-      // connect to MetaApi API
-      let connection = account.getRPCConnection();
-      await connection.connect();
-
-      // wait until terminal state synchronized to the local state
-      console.log(
-        "Waiting for SDK to synchronize to terminal state (may take some time depending on your history size)"
-      );
-      await connection.waitSynchronized();
+  try {
+      
+    const api = new MetaApi(token);
+    const account = await api.metatraderAccountApi.getAccount(accountId);
+    let connection = account.getRPCConnection();
+    await connection.connect();
 
       // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
 
@@ -279,7 +259,8 @@ app.post("/", async (req, res) => {
         tradeAllowed,
         investorMode,
       } = await connection.getAccountInformation();
-      console.log("positions:", await connection.getPositions());
+      
+      //console.log("positions:", await connection.getPositions());
 
       //calculate multiplier
 
@@ -306,7 +287,7 @@ app.post("/", async (req, res) => {
 
       // trade
       console.log("Submitting pending order");
-      try {
+      
         size1 = (+positionSize * +ps1).toFixed(2);
         size2 = (+positionSize * +ps2).toFixed(2);
         size3 = (+positionSize * +ps3).toFixed(2);
@@ -352,53 +333,10 @@ app.post("/", async (req, res) => {
         console.log("Trade failed with result code " + err.stringCode);
       }
 
-      if (!deployedStates.includes(initialState)) {
-        // undeploy account if it was undeployed
-        console.log("Undeploying account");
-        await connection.close();
-        await account.undeploy();
-      }
-    } catch (err) {
-      console.error(err);
-    }
-    process.exit();
-  }
-
-  testMetaApiSynchronization();
-
-  //}
-});
-
-
-// app.get("/information", async (req, res) => {
-//   try {
-//     const api = new MetaApi(token);
-//     const account = await api.metatraderAccountApi.getAccount(accountId);
-//     const initialState = account.state;
-//     const deployedStates = ["DEPLOYING", "DEPLOYED"];
-    
-//     if (!deployedStates.includes(initialState)) {
-//      // wait until account is deployed and connected to broker
-//      console.log("Deploying account");
-//      await account.deploy();
-//      }
         
-//     await account.waitConnected();
-        
-//     // connect to MetaApi API
-//     let connection = account.getRPCConnection();
-//     await connection.connect();
-    
-//     const { broker, balance, equity, login} = await connection.getAccountInformation();
-    
-//     console.log("GET", broker);
-    
-    
-//     res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login});
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// });
+    } )
+
+
 
 app.get("/information", async (req, res) => {
   try {
