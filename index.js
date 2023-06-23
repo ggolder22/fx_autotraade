@@ -262,8 +262,8 @@ app.get("/information", async (req, res) => {
 
        
          
-    res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login});
-    res.status(200).json(pos)
+    res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login, pos:{pos}});
+    
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
