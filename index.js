@@ -251,7 +251,7 @@ app.post("/", async (req, res) => {
 
 app.get("/information", async (req, res) => {
   try {
-    //const api = new MetaApi(token);
+    const api = new MetaApi(token);
     const account = await api.metatraderAccountApi.getAccount(accountId);
     const { broker, balance, equity, login} = await connection.getAccountInformation();
     console.log("GET", broker);
