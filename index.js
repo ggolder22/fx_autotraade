@@ -256,7 +256,11 @@ app.get("/information", async (req, res) => {
     let connection = account.getRPCConnection();
     await connection.connect();
     const { broker, balance, equity, login} = await connection.getAccountInformation();
+    pos = await connection.getPositions();
     console.log("GET", broker);
+    console.log("Pos", pos)    
+
+       
          
     res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login});
   } catch (error) {
