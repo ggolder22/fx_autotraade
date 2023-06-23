@@ -253,6 +253,8 @@ app.get("/information", async (req, res) => {
   try {
     const api = new MetaApi(token);
     const account = await api.metatraderAccountApi.getAccount(accountId);
+    let connection = account.getRPCConnection();
+    await connection.connect();
     const { broker, balance, equity, login} = await connection.getAccountInformation();
     console.log("GET", broker);
          
