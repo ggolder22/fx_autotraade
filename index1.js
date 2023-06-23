@@ -219,36 +219,49 @@ app.post("/", async (req, res) => {
 });
 
 
-app.get("/information", async (req, res) => {
-  try {
-    const api = new MetaApi(token);
-    const account = await api.metatraderAccountApi.getAccount(accountId);
-    const initialState = account.state;
-    const deployedStates = ["DEPLOYING", "DEPLOYED"];
+// app.get("/information", async (req, res) => {
+//   try {
+//     const api = new MetaApi(token);
+//     const account = await api.metatraderAccountApi.getAccount(accountId);
+//     const initialState = account.state;
+//     const deployedStates = ["DEPLOYING", "DEPLOYED"];
     
-    if (!deployedStates.includes(initialState)) {
-     // wait until account is deployed and connected to broker
-     console.log("Deploying account");
-     await account.deploy();
-     }
+//     if (!deployedStates.includes(initialState)) {
+//      // wait until account is deployed and connected to broker
+//      console.log("Deploying account");
+//      await account.deploy();
+//      }
         
-    await account.waitConnected();
+//     await account.waitConnected();
         
-    // connect to MetaApi API
-    let connection = account.getRPCConnection();
-    await connection.connect();
+//     // connect to MetaApi API
+//     let connection = account.getRPCConnection();
+//     await connection.connect();
     
-    const { broker, balance, equity, login} = await connection.getAccountInformation();
+//     const { broker, balance, equity, login} = await connection.getAccountInformation();
     
-    console.log("GET", broker);
+//     console.log("GET", broker);
     
     
-    res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login});
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+//     res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login});
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// });
 
+
+app.get("/information", async (req, res) => {
+    try {
+      //const api = new MetaApi(token);
+      const account = await api.metatraderAccountApi.getAccount(accountId);
+      const { broker, balance, equity, login} = await connection.getAccountInformation();
+      console.log("GET", broker);
+           
+      res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login});
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
 
 // Iniciar el servidor
 app.listen(port, () => {
