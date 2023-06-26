@@ -68,14 +68,15 @@ app.use(bodyParser.json());
 app.post("/", async (req, res) => {
   // We get data from webhook
 
-  const { orderType, tikcer, RF, entry, sl, tp1, ps1, tp2, ps2, tp3, ps3 } =
-    req.body;
+  //const { orderType, tikcer, RF, entry, sl, tp1, ps1, tp2, ps2, tp3, ps3 } =
+  //  req.body;
 
-  console.log(orderType, tikcer, RF, entry, sl, tp1, tp2, tp3, ps1, ps2, ps3);
+  //console.log(orderType, tikcer, RF, entry, sl, tp1, tp2, tp3, ps1, ps2, ps3);
 
-  // const { trade } = req.body;
+  const { trade } = req.body;
 
-  // console.log(trade);
+                   
+  console.log(trade);
 
   
   
