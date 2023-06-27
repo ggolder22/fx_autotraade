@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -62,7 +60,6 @@ SYMBOLS = [
 // Configurar body-parser para analizar los datos
 app.use(bodyParser.json());
 
-
 // Ruta para recibir las solicitudes del webhook
 
 app.post("/", async (req, res) => {
@@ -74,128 +71,164 @@ app.post("/", async (req, res) => {
   //console.log(orderType, tikcer, RF, entry, sl, tp1, tp2, tp3, ps1, ps2, ps3);
 
   const { trade } = req.body;
-
-                   
   console.log(trade);
 
-  
-  
-  
-  
+  let tradeSplit = trade?.trade?.split(" ");
+
+  let tradeMapeado = tradeSplit.map((e, i) => {
+    if (i == 0) return { orderType: e };
+    if (i == 1) return { tikcer: e };
+    if (e == "RF") return { RF: tradeSplit[i + 1] };
+    if (e == "Entry") return { Entry: tradeSplit[i + 1] };
+    if (e == "SL") return { SL: tradeSplit[i + 1] };
+    if (e == "TP1") return { TP1: tradeSplit[i + 1] };
+    if (e == "TP2") return { TP2: tradeSplit[i + 1] };
+    if (e == "TP3") return { TP3: tradeSplit[i + 1] };
+    if (e == "TP4") return { TP4: tradeSplit[i + 1] };
+    if (e == "TP5") return { TP5: tradeSplit[i + 1] };
+    if (e == "TP6") return { TP6: tradeSplit[i + 1] };
+    if (e == "PS1") return { PS1: tradeSplit[i + 1] };
+    if (e == "PS2") return { PS2: tradeSplit[i + 1] };
+    if (e == "PS3") return { PS3: tradeSplit[i + 1] };
+    if (e == "PS4") return { PS4: tradeSplit[i + 1] };
+    if (e == "PS5") return { PS5: tradeSplit[i + 1] };
+    if (e == "PS6") return { PS6: tradeSplit[i + 1] };
+  });
+
+  const tradeFilter = tradeMapeado.filter((e) => e !== undefined);
+
+  let tradeFinal = {};
+  for (let e of tradeFilter) {
+    tradeFinal[Object.keys(e)[0]] = Object.values(e)[0];
+  }
+
+  console.log(tradeFinal);
+
+  const {
+    orderType,
+    tikcer,
+    RF,
+    Entry,
+    SL,
+    TP1,
+    PS1,
+    TP2,
+    PS2,
+    TP3,
+    PS3,
+    TP4,
+    PS4,
+    TP5,
+    PS5,
+    TP6,
+  } = tradeFinal;
+
   //Codigo para ejecutar trades   {
 
   const api = new MetaApi(token);
 
-
-
-
   try {
-      
     const api = new MetaApi(token);
     const account = await api.metatraderAccountApi.getAccount(accountId);
     let connection = account.getRPCConnection();
     await connection.connect();
 
-      // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
+    // invoke RPC API (replace ticket numbers with actual ticket numbers which exist in your MT account)
 
-      //console.log('account information:', await connection.getAccountInformation() );
-      const {
-        broker,
-        currency,
-        server,
-        balance,
-        equity,
-        margin,
-        freeMargin,
-        leverage,
-        marginLevel,
-        type,
-        name,
-        login,
-        credit,
-        platform,
-        marginMode,
-        tradeAllowed,
-        investorMode,
-      } = await connection.getAccountInformation();
-      
-      //console.log("positions:", await connection.getPositions());
+    //console.log('account information:', await connection.getAccountInformation() );
+    const {
+      broker,
+      currency,
+      server,
+      balance,
+      equity,
+      margin,
+      freeMargin,
+      leverage,
+      marginLevel,
+      type,
+      name,
+      login,
+      credit,
+      platform,
+      marginMode,
+      tradeAllowed,
+      investorMode,
+    } = await connection.getAccountInformation();
 
-      //calculate multiplier
+    //console.log("positions:", await connection.getPositions());
 
-      if (tikcer == "XAUUSD") multiplier = 0.1;
-      else if (tikcer == "XAGUSD") multiplier = 0.001;
-      //else if(str(trade['Entry']).index('.') >= 2):
-      //    multiplier = 0.01
-      else multiplier = 0.0001;
+    //calculate multiplier
 
-      console.log("multiplier: ", multiplier);
+    if (tikcer == "XAUUSD") multiplier = 0.1;
+    else if (tikcer == "XAGUSD") multiplier = 0.001;
+    //else if(str(trade['Entry']).index('.') >= 2):
+    //    multiplier = 0.01
+    else multiplier = 0.0001;
 
-      //calculates the stop loss in pips
-      let stopLossPips = Math.abs(Math.round((sl - entry) / multiplier));
+    console.log("multiplier: ", multiplier);
 
-      console.log("slpips", stopLossPips);
+    //calculates the stop loss in pips
+    let stopLossPips = Math.abs(Math.round((sl - entry) / multiplier));
 
-      //  calculates the position size using stop loss and RISK FACTOR
-      console.log("Risk Factor:", RF);
-      console.log("balance:", balance);
+    console.log("slpips", stopLossPips);
 
-      let positionSize =
-        Math.floor(((balance * RF) / stopLossPips / 10) * 100) / 100;
-      console.log("LoteSize:", positionSize);
+    //  calculates the position size using stop loss and RISK FACTOR
+    console.log("Risk Factor:", RF);
+    console.log("balance:", balance);
 
-      // trade
-      console.log("Submitting pending order");
-      
-        size1 = (+positionSize * +ps1).toFixed(2);
-        size2 = (+positionSize * +ps2).toFixed(2);
-        size3 = (+positionSize * +ps3).toFixed(2);
-        console.log("size1:", size1);
-        console.log("size2:", size2);
-        console.log("size3:", size3);
-        const posize = [size1, size2, size3];
-        const tptp = [tp1, tp2, tp3];
-        console.log(posize);
-        console.log(tptp);
+    let positionSize =
+      Math.floor(((balance * RF) / stopLossPips / 10) * 100) / 100;
+    console.log("LoteSize:", positionSize);
 
-        if (orderType == "BUY")
-          for (let i = 0; i < 3; i++) {
-            result = await connection.createMarketBuyOrder(
-              tikcer,
-              +posize[i],
-              +sl,
-              +tptp[i]
-            );
-          }
-        else if (orderType == "SELL") {
-          for (let i = 0; i < 3; i++) {
-            result = await connection.createMarketSellOrder(
-              tikcer,
-              +posize[i],
-              +sl,
-              +tptp[i]
-            );
-          }
-        } else if (orderType == "BUY LIMIT") {
-        }
+    // trade
+    console.log("Submitting pending order");
 
-        console.log("sl:", sl);
-        console.log("tp1:", tp1);
-        console.log("tp2:", tp2);
-        console.log("tp3:", tp3);
-        console.log("ps1:", ps1);
-        console.log("ps2:", ps2);
-        console.log("ps3:", ps3);
+    size1 = (+positionSize * +ps1).toFixed(2);
+    size2 = (+positionSize * +ps2).toFixed(2);
+    size3 = (+positionSize * +ps3).toFixed(2);
+    console.log("size1:", size1);
+    console.log("size2:", size2);
+    console.log("size3:", size3);
+    const posize = [size1, size2, size3];
+    const tptp = [tp1, tp2, tp3];
+    console.log(posize);
+    console.log(tptp);
 
-        console.log("Trade successful, result code is " + result.stringCode);
-      } catch (err) {
-        console.log("Trade failed with result code " + err.stringCode);
+    if (orderType == "BUY")
+      for (let i = 0; i < 3; i++) {
+        result = await connection.createMarketBuyOrder(
+          tikcer,
+          +posize[i],
+          +sl,
+          +tptp[i]
+        );
       }
+    else if (orderType == "SELL") {
+      for (let i = 0; i < 3; i++) {
+        result = await connection.createMarketSellOrder(
+          tikcer,
+          +posize[i],
+          +sl,
+          +tptp[i]
+        );
+      }
+    } else if (orderType == "BUY LIMIT") {
+    }
 
-        
-    } )
+    console.log("sl:", sl);
+    console.log("tp1:", tp1);
+    console.log("tp2:", tp2);
+    console.log("tp3:", tp3);
+    console.log("ps1:", ps1);
+    console.log("ps2:", ps2);
+    console.log("ps3:", ps3);
 
-
+    console.log("Trade successful, result code is " + result.stringCode);
+  } catch (err) {
+    console.log("Trade failed with result code " + err.stringCode);
+  }
+});
 
 app.get("/information", async (req, res) => {
   try {
@@ -203,15 +236,19 @@ app.get("/information", async (req, res) => {
     const account = await api.metatraderAccountApi.getAccount(accountId);
     let connection = account.getRPCConnection();
     await connection.connect();
-    const { broker, balance, equity, login} = await connection.getAccountInformation();
+    const { broker, balance, equity, login } =
+      await connection.getAccountInformation();
     pos = await connection.getPositions();
     console.log("GET", broker);
-    console.log("Pos", pos)    
+    console.log("Pos", pos);
 
-       
-         
-    res.status(200).json({ broker: broker, balance: balance, equity: equity, login:login, pos:{pos}});
-    
+    res.status(200).json({
+      broker: broker,
+      balance: balance,
+      equity: equity,
+      login: login,
+      pos: { pos },
+    });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
