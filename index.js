@@ -124,6 +124,8 @@ app.post("/", async (req, res) => {
     TP6,
   } = tradeFinal;
 
+  console.log(sl);
+
   //Codigo para ejecutar trades   {
 
   const api = new MetaApi(token);
