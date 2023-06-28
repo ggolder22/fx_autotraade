@@ -110,7 +110,7 @@ app.post("/", async (req, res) => {
     tikcer,
     RF,
     Entry,
-    sl,
+    SL,
     TP1,
     PS1,
     TP2,
@@ -124,7 +124,7 @@ app.post("/", async (req, res) => {
     TP6,
   } = tradeFinal;
 
-  console.log(+Entry, +sl);
+  console.log(+Entry, +SL);
 
   //Codigo para ejecutar trades   {
 
