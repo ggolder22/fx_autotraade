@@ -169,7 +169,7 @@ app.post("/", async (req, res) => {
     console.log("multiplier: ", multiplier);
 
     //calculates the stop loss in pips
-    let stopLossPips = Math.abs(Math.round((sl - entry) / multiplier));
+    let stopLossPips = Math.abs(Math.round((SL - Entry) / multiplier));
 
     console.log("slpips", stopLossPips);
 
@@ -184,19 +184,25 @@ app.post("/", async (req, res) => {
     // trade
     console.log("Submitting pending order");
 
-    size1 = (+positionSize * +ps1).toFixed(2);
-    size2 = (+positionSize * +ps2).toFixed(2);
-    size3 = (+positionSize * +ps3).toFixed(2);
+    size1 = (+positionSize * +PS1).toFixed(2);
+    size2 = (+positionSize * +PS2).toFixed(2);
+    size3 = (+positionSize * +PS3).toFixed(2);
+    size4 = (+positionSize * +PS4).toFixed(2);
+    size5 = (+positionSize * +PS5).toFixed(2);
+    size6 = (+positionSize * +PS6).toFixed(2);
     console.log("size1:", size1);
     console.log("size2:", size2);
     console.log("size3:", size3);
-    const posize = [size1, size2, size3];
-    const tptp = [tp1, tp2, tp3];
+    console.log("size4:", size4);
+    console.log("size5:", size5);
+    console.log("size6:", size6);
+    const posize = [size1, size2, size3, size4, size5, size6];
+    const tptp = [TP1, TP2, TP3, TP4, TP5, TP6];
     console.log(posize);
     console.log(tptp);
 
     if (orderType == "BUY")
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 6; i++) {
         result = await connection.createMarketBuyOrder(
           tikcer,
           +posize[i],
@@ -209,20 +215,27 @@ app.post("/", async (req, res) => {
         result = await connection.createMarketSellOrder(
           tikcer,
           +posize[i],
-          +sl,
+          +SL,
           +tptp[i]
         );
       }
     } else if (orderType == "BUY LIMIT") {
     }
 
-    console.log("sl:", sl);
-    console.log("tp1:", tp1);
-    console.log("tp2:", tp2);
-    console.log("tp3:", tp3);
-    console.log("ps1:", ps1);
-    console.log("ps2:", ps2);
-    console.log("ps3:", ps3);
+    console.log("sl:", SL);
+    console.log("tp1:", TP1);
+    console.log("tp2:", TP2);
+    console.log("tp3:", TP3);
+    console.log("tp4:", TP4);
+    console.log("tp5:", TP5);
+    console.log("tp6:", TP6);
+
+    console.log("ps1:", PS1);
+    console.log("ps2:", PS2);
+    console.log("ps3:", PS3);
+    console.log("ps4:", PS4);
+    console.log("ps5:", PS5);
+    console.log("ps6:", PS6);
 
     console.log("Trade successful, result code is " + result.stringCode);
   } catch (err) {
