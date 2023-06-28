@@ -74,6 +74,7 @@ app.post("/", async (req, res) => {
   console.log(trade);
 
   let tradeSplit = trade?.trade?.split(" ");
+  console.log(tradeSplit);
 
   let tradeMapeado = tradeSplit.map((e, i) => {
     if (i == 0) return { orderType: e };
