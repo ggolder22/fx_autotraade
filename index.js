@@ -124,7 +124,7 @@ app.post("/", async (req, res) => {
     TP6,
   } = tradeFinal;
 
-  console.log(sl);
+  console.log(Entry, sl);
 
   //Codigo para ejecutar trades   {
 
