@@ -73,7 +73,7 @@ app.post("/", async (req, res) => {
   const { trade } = req.body;
   console.log(trade);
 
-  let tradeSplit = trade?.trade?.split(" ");
+  let tradeSplit = trade?.split(" ");
   console.log(tradeSplit);
 
   let tradeMapeado = tradeSplit.map((e, i) => {
