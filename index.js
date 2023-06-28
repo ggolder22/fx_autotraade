@@ -110,7 +110,7 @@ app.post("/", async (req, res) => {
     tikcer,
     RF,
     Entry,
-    SL,
+    sl,
     TP1,
     PS1,
     TP2,
@@ -170,7 +170,7 @@ app.post("/", async (req, res) => {
     console.log("multiplier: ", multiplier);
 
     //calculates the stop loss in pips
-    let stopLossPips = Math.abs(Math.round((SL - Entry) / multiplier));
+    let stopLossPips = Math.abs(Math.round((sl - Entry) / multiplier));
 
     console.log("slpips", stopLossPips);
 
