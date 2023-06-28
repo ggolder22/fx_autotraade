@@ -172,7 +172,7 @@ app.post("/", async (req, res) => {
     console.log("multiplier: ", multiplier);
 
     //calculates the stop loss in pips
-    let stopLossPips = Math.abs(Math.round((sl - Entry) / multiplier));
+    let stopLossPips = Math.abs(Math.round((+sl - Entry) / multiplier));
 
     console.log("slpips", stopLossPips);
 
