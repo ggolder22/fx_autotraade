@@ -237,9 +237,9 @@ app.use(bodyParser.json());
           if (impact == "High"){ 
           try {
           //mando mensaje a canal de german
-          bot.sendMessage(-1001565358230, " 🗞️  German´s NEWS" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
+          bot.sendMessage(-1001565358230, " 🗞️  German´s NEWS: " +"\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
           //mando mensaje a canal de tony
-          bot.sendMessage(-928777684, " 🗞️  Tony´s NEWS"  + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
+          bot.sendMessage(-928777684, " 🗞️  Tony´s NEWS: "  + "\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
           console.log("impact: ", impact);
           } catch (err) {
             console.log("Noticias not working ");
