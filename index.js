@@ -222,23 +222,23 @@ app.use(bodyParser.json());
 
   // Script para fundamentales 
   
-  //   if (trade == undefined) {
-  //       // Fundamentals 
+    if (trade == undefined) {
+        // Fundamentals 
     
-  //       async function noticias (impact, country, date, title){
+        async function noticias (impact, country, date, title){
       
-  //         if (impact == "High"){ 
-  //         try {
-  //         bot.sendMessage(-1001565358230, "👁️ Fundamentals Nuevas: " + "\nTitle: " + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
-  //         console.log("impact: ", impact);
-  //         } catch (err) {
-  //           console.log("Noticias not working ");
-  //         }
-  //       }
-  //       }
+          if (impact == "High"){ 
+          try {
+          bot.sendMessage(-1001565358230, "👁️ Fundamentals Nuevas: " + "\nTitle: " + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
+          console.log("impact: ", impact);
+          } catch (err) {
+            console.log("Noticias not working ");
+          }
+        }
+        }
     
-  //       fundamentals?.forEach(e=>noticias(e.impact, e.country, e.date, e.title))
-  //  }
+        fundamentals?.forEach(e=>noticias(e.impact, e.country, e.date, e.title))
+   }
   
     
   //Script trades
