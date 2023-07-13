@@ -24,7 +24,10 @@ app.use((req, res, next) => {
   next();
 });
 
-
+bot.onText(/^\/chatid/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(chatId, "El id de este chat es: " + chatId);  
+});
 
 const fornix = [
 //Cuenta Ger Challenge
