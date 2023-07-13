@@ -122,9 +122,10 @@ var schedule = require('node-schedule');
 //      console.log('The answer to life, the universe, and everything!');
 //  });
 
-// Stop bots Monday - Friday at 17:49
+// Stop bots Monday - Friday at 17:49. 
+// Using data for timezone UTC 
 
-stopHora = 17;
+stopHora = 20;
 stopMinuto = 49;
 
  var rule = new schedule.RecurrenceRule();
@@ -133,13 +134,13 @@ stopMinuto = 49;
  rule.minute = +stopMinuto;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = false; 
-    console.log(" 🛑 " + stopHora + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!');
-    bot.sendMessage(-1001565358230, " 🛑 " + stopHora + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
+    console.log(" 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!');
+    bot.sendMessage(-1001565358230, " 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
 
  });
 
 // Start bots Monday - Friday at 18:51
-startHora= 18;
+startHora= 21;
 startMinuto = 51;
  var rule = new schedule.RecurrenceRule();
  rule.dayOfWeek = [0, new schedule.Range(1, 5)];
@@ -147,12 +148,12 @@ startMinuto = 51;
  rule.minute = +startMinuto;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
-    console.log(" 🤪 " + startHora +":" + startMinuto +' Bot has started its operation its time to make money!');
-    bot.sendMessage(-1001565358230, " 🤪 " + startHora +":" + startMinuto +' Bot has started its operation its time to make money!')
+    console.log(" 🤪 " + (startHora-3) + ":" + startMinuto +' Bot has started its operation its time to make money!');
+    bot.sendMessage(-1001565358230, " 🤪 " + (startHora-3) +":" + startMinuto +' Bot has started its operation its time to make money!')
  });
 
 // Time to sleep 
- sleepHora = 21;
+ sleepHora = 0;
  sleepMinuto = 43;
  
  var rule = new schedule.RecurrenceRule();
@@ -161,13 +162,13 @@ startMinuto = 51;
   rule.minute = +sleepMinuto;
   var j = schedule.scheduleJob(rule, function(){
      scheduleTrading = false; 
-     console.log(" 🛑 " + sleepHora + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening');
-     bot.sendMessage(-1001565358230, " 🛑 " + sleepHora + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
+     console.log(" 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening');
+     bot.sendMessage(-1001565358230, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
  
   });
  
 // Time to wake up 
-wakeHora = 18;
+wakeHora = 21;
 wakeMinuto = 30;
 
 var rule = new schedule.RecurrenceRule();
@@ -176,8 +177,8 @@ var rule = new schedule.RecurrenceRule();
  rule.minute = +wakeMinuto;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
-    console.log(" 👋 " + wakeHora + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
-    bot.sendMessage(-1001565358230, " 👋 " + wakeHora + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
+    console.log(" 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
+    bot.sendMessage(-1001565358230, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
 
  });
 
