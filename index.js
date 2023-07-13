@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 
 //Telegram
 const TelegramBot = require('node-telegram-bot-api');
-//const token = '5993048040:AAHX93mAtozUxDWarPDe3q4ZYrP6aooiiiE';
-//const bot = new TelegramBot(token, {polling: true});
+const {token} = process.env;
+const bot = new TelegramBot(token, {polling: true});
 
 
 const app = express();
@@ -134,7 +134,7 @@ stopMinuto = 49;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = false; 
     console.log(" 🛑 " + stopHora + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!');
-    //bot.sendMessage(-1001565358230, " 🛑 " + stopHora + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
+    bot.sendMessage(-1001565358230, " 🛑 " + stopHora + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
 
  });
 
@@ -148,7 +148,7 @@ startMinuto = 51;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
     console.log(" 🤪 " + startHora +":" + startMinuto +' Bot has started its operation its time to make money!');
-    //bot.sendMessage(-1001565358230, " 🤪 " + startHora +":" + startMinuto +' Bot has started its operation its time to make money!')
+    bot.sendMessage(-1001565358230, " 🤪 " + startHora +":" + startMinuto +' Bot has started its operation its time to make money!')
  });
 
 // Time to sleep 
@@ -162,7 +162,7 @@ startMinuto = 51;
   var j = schedule.scheduleJob(rule, function(){
      scheduleTrading = false; 
      console.log(" 🛑 " + sleepHora + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening');
-     //bot.sendMessage(-1001565358230, " 🛑 " + sleepHora + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
+     bot.sendMessage(-1001565358230, " 🛑 " + sleepHora + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
  
   });
  
@@ -177,7 +177,7 @@ var rule = new schedule.RecurrenceRule();
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
     console.log(" 👋 " + wakeHora + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
-    //bot.sendMessage(-1001565358230, " 👋 " + wakeHora + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
+    bot.sendMessage(-1001565358230, " 👋 " + wakeHora + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
 
  });
 
@@ -379,20 +379,7 @@ app.use(bodyParser.json());
     if (autoTrade == true && scheduleTrading == true) {  
       
       // Telegram message
-      // bot.sendMessage(-1001565358230, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
-      //   "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
-      //    "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
-      //    "\nTP1: " + (tp1InPips * size1 )*10 +
-      //    "\nTP2: " + (tp2InPips * size2 )*10 +
-      //    "\nTP3: " + (tp3InPips * size3 )*10 +
-      //    "\nTP4: " + (tp4InPips * size4 )*10 +
-      //    "\nTP5: " + (tp5InPips * size5 )*10 +
-      //    "\nTP6: " + (tp6InPips * size6 )*10 + 
-      //    "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
-      //    "\n\nwww.trivialfunction.com"
-      //    ) 
-      
-      console.log("🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
+      bot.sendMessage(-1001565358230, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
         "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
          "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
          "\nTP1: " + (tp1InPips * size1 )*10 +
@@ -404,6 +391,19 @@ app.use(bodyParser.json());
          "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
          "\n\nwww.trivialfunction.com"
          ) 
+      
+      // console.log("🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
+      //   "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
+      //    "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
+      //    "\nTP1: " + (tp1InPips * size1 )*10 +
+      //    "\nTP2: " + (tp2InPips * size2 )*10 +
+      //    "\nTP3: " + (tp3InPips * size3 )*10 +
+      //    "\nTP4: " + (tp4InPips * size4 )*10 +
+      //    "\nTP5: " + (tp5InPips * size5 )*10 +
+      //    "\nTP6: " + (tp6InPips * size6 )*10 + 
+      //    "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
+      //    "\n\nwww.trivialfunction.com"
+      //    ) 
 
 
       console.log("Submitting pending order");
