@@ -31,7 +31,7 @@ const fornix = [
   {accountId:"bcba90b4-f5a0-4360-963d-47e0e6b91b27",
   token:"5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe",
   nombre:"Ger Challenge",
-  autoTrade:true,
+  autoTrade:false,
   RF:0.005},
 
 // Cuenta Ger DEMO
@@ -39,20 +39,20 @@ const fornix = [
   token:"3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru",
   nombre:"German DEMO",
   autoTrade:true,
-  RF:0.002},
+  RF:0.005},
 
 //Cuenta Tony Challenge
   {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
   token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
   nombre:"Tony Challenge",
-  autoTrade:true,
+  autoTrade:false,
   RF:0.005},
 
 //Cuenta Real Tony
   {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
   token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
   nombre:"Tony Real",
-  autoTrade:true,
+  autoTrade:false,
   RF:0.005}
 
 ]
