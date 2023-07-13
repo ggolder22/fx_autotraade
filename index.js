@@ -232,6 +232,7 @@ app.use(bodyParser.json());
           if (impact == "High"){ 
           try {
           bot.sendMessage(-1001565358230, "👁️ Fundamentals Nuevas: " + "\nTitle: " + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
+          bot.sendMessage(-1001971201422, "👁️ Fundamentals Nuevas: " + "\nTitle: " + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
           console.log("impact: ", impact);
           } catch (err) {
             console.log("Noticias not working ");
