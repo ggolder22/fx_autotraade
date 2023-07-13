@@ -222,7 +222,7 @@ app.use(bodyParser.json());
 
   // Script para fundamentales 
   
-    if (trade == undefined && fundamentals) {
+    if (trade == undefined && fundamentals.length>0) {
         // Fundamentals 
     
         async function noticias (impact, country, date, title){
