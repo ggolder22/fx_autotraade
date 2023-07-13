@@ -219,10 +219,11 @@ app.use(bodyParser.json());
     const  fundamentals  = req.body;
 
     console.log("Fundamentales: ", fundamentals);
+    console.log(fundamentals.length);
 
   // Script para fundamentales 
   
-    if (trade == undefined) {
+    if (trade == undefined && fundamentals.length>0) {
         // Fundamentals 
     
         async function noticias (impact, country, date, title){
@@ -237,10 +238,8 @@ app.use(bodyParser.json());
         }
         }
         
-        if (impact){
         fundamentals?.forEach(e=>noticias(e.impact, e.country, e.date, e.title))
-        }
-     }
+   }
   
     
   //Script trades
