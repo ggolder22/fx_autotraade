@@ -28,11 +28,11 @@ app.use((req, res, next) => {
 
 const fornix = [
 //Cuenta Ger Challenge
-  {accountId:"bcba90b4-f5a0-4360-963d-47e0e6b91b27",
-  token:"5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe",
-  nombre:"Ger Challenge",
-  autoTrade:false,
-  RF:0.005},
+  // {accountId:"bcba90b4-f5a0-4360-963d-47e0e6b91b27",
+  // token:"5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe",
+  // nombre:"Ger Challenge",
+  // autoTrade:false,
+  // RF:0.005},
 
 // Cuenta Ger DEMO
   {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2", 
@@ -42,18 +42,18 @@ const fornix = [
   RF:0.005},
 
 //Cuenta Tony Challenge
-  {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
-  token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
-  nombre:"Tony Challenge",
-  autoTrade:false,
-  RF:0.005},
+  // {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
+  // token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
+  // nombre:"Tony Challenge",
+  // autoTrade:false,
+  // RF:0.005},
 
 //Cuenta Real Tony
-  {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
-  token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
-  nombre:"Tony Real",
-  autoTrade:false,
-  RF:0.005}
+  // {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
+  // token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
+  // nombre:"Tony Real",
+  // autoTrade:false,
+  // RF:0.005}
 
 ]
 
