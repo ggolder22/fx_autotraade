@@ -24,6 +24,8 @@ app.use((req, res, next) => {
   next();
 });
 
+
+// con este codigo obtengo el chat id de telegram
 bot.onText(/^\/chatid/, (msg) => {
   const chatId = msg.chat.id;
   bot.sendMessage(chatId, "El id de este chat es: " + chatId);  
@@ -234,7 +236,9 @@ app.use(bodyParser.json());
       
           if (impact == "High"){ 
           try {
+          //mando mensaje a canal de german
           bot.sendMessage(-1001565358230, "👁️ Fundamentals Nuevas: " + "\nTitle: " + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
+          //mando mensaje a canal de tony
           bot.sendMessage(-971201422, "👁️ Fundamentals Nuevas: " + "\nTitle: " + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
           console.log("impact: ", impact);
           } catch (err) {
@@ -384,7 +388,7 @@ app.use(bodyParser.json());
       
     if (autoTrade == true && scheduleTrading == true) {  
       
-      // Telegram message
+      // Telegram message a canal de german
       bot.sendMessage(-1001565358230, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
         "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
          "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
@@ -397,6 +401,19 @@ app.use(bodyParser.json());
          "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
          "\n\nwww.trivialfunction.com"
          ) 
+      // Telegram message a canal de tony
+         bot.sendMessage(-971201422, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
+         "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
+          "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
+          "\nTP1: " + (tp1InPips * size1 )*10 +
+          "\nTP2: " + (tp2InPips * size2 )*10 +
+          "\nTP3: " + (tp3InPips * size3 )*10 +
+          "\nTP4: " + (tp4InPips * size4 )*10 +
+          "\nTP5: " + (tp5InPips * size5 )*10 +
+          "\nTP6: " + (tp6InPips * size6 )*10 + 
+          "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
+          "\n\nwww.trivialfunction.com"
+          ) 
       
       // console.log("🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
       //   "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
