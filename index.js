@@ -222,7 +222,7 @@ app.use(bodyParser.json());
 
   // Script para fundamentales 
   
-    if (trade == undefined && fundamentals.includes(title)) {
+    if (trade == undefined) {
         // Fundamentals 
     
         async function noticias (impact, country, date, title){
@@ -236,9 +236,11 @@ app.use(bodyParser.json());
           }
         }
         }
-    
+        
+        if (impact){
         fundamentals?.forEach(e=>noticias(e.impact, e.country, e.date, e.title))
-   }
+        }
+     }
   
     
   //Script trades
