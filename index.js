@@ -239,7 +239,7 @@ app.use(bodyParser.json());
           //mando mensaje a canal de german
           bot.sendMessage(-1001565358230, "👁️ Fundamentals Nuevas: " + "\nTitle: " + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
           //mando mensaje a canal de tony
-          bot.sendMessage(-971201422, "👁️ Fundamentals Nuevas: " + "\nTitle: " + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
+          bot.sendMessage(-928777684, "👁️ Fundamentals Nuevas: " + "\nTitle: " + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
           console.log("impact: ", impact);
           } catch (err) {
             console.log("Noticias not working ");
@@ -402,7 +402,7 @@ app.use(bodyParser.json());
          "\n\nwww.trivialfunction.com"
          ) 
       // Telegram message a canal de tony
-         bot.sendMessage(-971201422, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
+         bot.sendMessage(-928777684, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
          "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
           "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
           "\nTP1: " + (tp1InPips * size1 )*10 +
