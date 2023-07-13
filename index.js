@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 //Telegram
 const TelegramBot = require('node-telegram-bot-api');
 const {token} = process.env;
-//const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(token, {polling: true});
 
 
 const app = express();
