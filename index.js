@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 
 //Telegram
 const TelegramBot = require('node-telegram-bot-api');
-const token = '5993048040:AAHX93mAtozUxDWarPDe3q4ZYrP6aooiiiE';
+//const token = '5993048040:AAHX93mAtozUxDWarPDe3q4ZYrP6aooiiiE';
 //const bot = new TelegramBot(token, {polling: true});
 
 
@@ -28,32 +28,32 @@ app.use((req, res, next) => {
 
 const fornix = [
 //Cuenta Ger Challenge
-  // {accountId:"bcba90b4-f5a0-4360-963d-47e0e6b91b27",
-  // token:"5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe",
-  // nombre:"Ger Challenge",
-  // autoTrade:false,
-  // RF:0.005},
-
-// Cuenta Ger DEMO
-  {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2", 
-  token:"3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru",
-  nombre:"German DEMO",
+  {accountId:"bcba90b4-f5a0-4360-963d-47e0e6b91b27",
+  token:"5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe",
+  nombre:"Ger Challenge",
   autoTrade:true,
   RF:0.005},
 
-//Cuenta Tony Challenge
-  // {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
-  // token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
-  // nombre:"Tony Challenge",
-  // autoTrade:false,
+// Cuenta Ger DEMO
+  // {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2", 
+  // token:"3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru",
+  // nombre:"German DEMO",
+  // autoTrade:true,
   // RF:0.005},
 
+//Cuenta Tony Challenge
+  {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
+  token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
+  nombre:"Tony Challenge",
+  autoTrade:true,
+  RF:0.005},
+
 //Cuenta Real Tony
-  // {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
-  // token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
-  // nombre:"Tony Real",
-  // autoTrade:false,
-  // RF:0.005}
+  {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
+  token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
+  nombre:"Tony Real",
+ autoTrade:true,
+  RF :0.005}
 
 ]
 
@@ -134,7 +134,7 @@ stopMinuto = 49;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = false; 
     console.log(" 🛑 " + stopHora + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!');
-    bot.sendMessage(-1001565358230, " 🛑 " + stopHora + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
+    //bot.sendMessage(-1001565358230, " 🛑 " + stopHora + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
 
  });
 
@@ -148,7 +148,7 @@ startMinuto = 51;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
     console.log(" 🤪 " + startHora +":" + startMinuto +' Bot has started its operation its time to make money!');
-    bot.sendMessage(-1001565358230, " 🤪 " + startHora +":" + startMinuto +' Bot has started its operation its time to make money!')
+    //bot.sendMessage(-1001565358230, " 🤪 " + startHora +":" + startMinuto +' Bot has started its operation its time to make money!')
  });
 
 // Time to sleep 
@@ -162,7 +162,7 @@ startMinuto = 51;
   var j = schedule.scheduleJob(rule, function(){
      scheduleTrading = false; 
      console.log(" 🛑 " + sleepHora + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening');
-     bot.sendMessage(-1001565358230, " 🛑 " + sleepHora + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
+     //bot.sendMessage(-1001565358230, " 🛑 " + sleepHora + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
  
   });
  
@@ -177,7 +177,7 @@ var rule = new schedule.RecurrenceRule();
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
     console.log(" 👋 " + wakeHora + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
-    bot.sendMessage(-1001565358230, " 👋 " + wakeHora + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
+    //bot.sendMessage(-1001565358230, " 👋 " + wakeHora + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
 
  });
 
@@ -392,6 +392,20 @@ app.use(bodyParser.json());
       //    "\n\nwww.trivialfunction.com"
       //    ) 
       
+      console.log("🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
+        "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
+         "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
+         "\nTP1: " + (tp1InPips * size1 )*10 +
+         "\nTP2: " + (tp2InPips * size2 )*10 +
+         "\nTP3: " + (tp3InPips * size3 )*10 +
+         "\nTP4: " + (tp4InPips * size4 )*10 +
+         "\nTP5: " + (tp5InPips * size5 )*10 +
+         "\nTP6: " + (tp6InPips * size6 )*10 + 
+         "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
+         "\n\nwww.trivialfunction.com"
+         ) 
+
+
       console.log("Submitting pending order");
 
       
