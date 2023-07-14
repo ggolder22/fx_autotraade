@@ -521,10 +521,11 @@ app.get("/information", async (req, res) => {
     const { broker, balance, equity, login } =
       await connection.getAccountInformation();
     pos = await connection.getPositions();
-    //historyOrders = await connection.getDealsByTimeRange(new Date(Date.now() - 4 * 24 * 60 * 60 * 1000), new Date());
+    historyOrders = await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date());
+  
     
     //console.log("pos",pos);
-    //console.log("History Orders", historyOrders);
+    console.log("History Orders", historyOrders);
 
     res.status(200).json({
       broker: broker,
@@ -532,11 +533,12 @@ app.get("/information", async (req, res) => {
       equity: equity,
       login: login,
       pos: { pos },
-      //historyOrders : {historyOrders},
+      historyOrders : {historyOrders},
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+  
 });
 
 // app.get("/streaming", async (req, res) => {
