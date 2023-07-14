@@ -37,7 +37,8 @@ const fornix = [
   token:"5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe",
   nombre:"Ger Challenge",
   autoTrade:true,
-  RF:0.005},
+  RF:0.005,
+  botId:-1001565358230},
 
 // Cuenta Ger DEMO
   // {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2", 
@@ -51,14 +52,16 @@ const fornix = [
   token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
   nombre:"Tony Challenge",
   autoTrade:true,
-  RF:0.005},
+  RF:0.005,
+  botId:-928777684},
 
 //Cuenta Real Tony
   {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
   token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
   nombre:"Tony Real",
  autoTrade:true,
-  RF :0.005}
+  RF :0.005,
+  botId:-928777684}
 
 ]
 
@@ -141,6 +144,7 @@ stopMinuto = 49;
     scheduleTrading = false; 
     console.log(" 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!');
     bot.sendMessage(-1001565358230, " 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
+    bot.sendMessage(-928777684, " 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
 
  });
 
@@ -155,35 +159,39 @@ startMinuto = 51;
     scheduleTrading = true; 
     console.log(" 🤪 " + (startHora-3) + ":" + startMinuto +' Bot has started its operation its time to make money!');
     bot.sendMessage(-1001565358230, " 🤪 " + (startHora-3) +":" + startMinuto +' Bot has started its operation its time to make money!')
+    bot.sendMessage(-928777684, " 🤪 " + (startHora-3) +":" + startMinuto +' Bot has started its operation its time to make money!')
  });
 
-// Time to sleep 
-//  sleepHora = 0;
-//  sleepMinuto = 43;
+//Time to sleep 
+ sleepHora = 0;
+ sleepMinuto = 43;
  
-//  var rule = new schedule.RecurrenceRule();
-//   rule.dayOfWeek = 5;
-//   rule.hour = +sleepHora;
-//   rule.minute = +sleepMinuto;
-//   var j = schedule.scheduleJob(rule, function(){
-//      scheduleTrading = false; 
-//      console.log(" 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening');
-//      bot.sendMessage(-1001565358230, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
+ var rule = new schedule.RecurrenceRule();
+  rule.dayOfWeek = 6;
+  rule.hour = +sleepHora;
+  rule.minute = +sleepMinuto;
+  var j = schedule.scheduleJob(rule, function(){
+     scheduleTrading = false; 
+     console.log(" 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening');
+     bot.sendMessage(-1001565358230, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
+     bot.sendMessage(-928777684, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
  
-//   });
+  });
  
 // Time to wake up 
-wakeHora = 21;
+wakeHora = 0;
 wakeMinuto = 30;
 
 var rule = new schedule.RecurrenceRule();
- rule.dayOfWeek = 0;
+ rule.dayOfWeek = 1;
  rule.hour = +wakeHora;
  rule.minute = +wakeMinuto;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
     console.log(" 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
     bot.sendMessage(-1001565358230, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
+    bot.sendMessage(-928777684, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
+
 
  });
 
@@ -311,7 +319,7 @@ app.use(bodyParser.json());
    
     //Conectamos a la cuenta de Meta Trader,  Calculamos valores y Trade, Envio de mensaje a bot de telegram y parseo de operaciones en MT
     
-    async function cuentas (accountId, token, autoTrade, nombre, RF) {
+    async function cuentas (accountId, token, autoTrade, nombre, RF, botId) {
     try {
       const api = new MetaApi(token);
       const account = await api.metatraderAccountApi.getAccount(accountId);
@@ -389,7 +397,7 @@ app.use(bodyParser.json());
     if (autoTrade == true && scheduleTrading == true) {  
       
       // Telegram message a canal de german
-      bot.sendMessage(-1001565358230, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
+      bot.sendMessage(botId, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
         "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
          "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
          "\nTP1: " + (tp1InPips * size1 )*10 +
@@ -401,19 +409,19 @@ app.use(bodyParser.json());
          "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
          "\n\nwww.trivialfunction.com"
          ) 
-      // Telegram message a canal de tony
-         bot.sendMessage(-928777684, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
-         "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
-          "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
-          "\nTP1: " + (tp1InPips * size1 )*10 +
-          "\nTP2: " + (tp2InPips * size2 )*10 +
-          "\nTP3: " + (tp3InPips * size3 )*10 +
-          "\nTP4: " + (tp4InPips * size4 )*10 +
-          "\nTP5: " + (tp5InPips * size5 )*10 +
-          "\nTP6: " + (tp6InPips * size6 )*10 + 
-          "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
-          "\n\nwww.trivialfunction.com"
-          ) 
+      // // Telegram message a canal de tony
+      //    bot.sendMessage(-928777684, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
+      //    "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
+      //     "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
+      //     "\nTP1: " + (tp1InPips * size1 )*10 +
+      //     "\nTP2: " + (tp2InPips * size2 )*10 +
+      //     "\nTP3: " + (tp3InPips * size3 )*10 +
+      //     "\nTP4: " + (tp4InPips * size4 )*10 +
+      //     "\nTP5: " + (tp5InPips * size5 )*10 +
+      //     "\nTP6: " + (tp6InPips * size6 )*10 + 
+      //     "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
+      //     "\n\nwww.trivialfunction.com"
+      //     ) 
       
       // console.log("🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
       //   "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
@@ -493,7 +501,7 @@ app.use(bodyParser.json());
       console.log("Trade failed with result code " + err.stringCode);
     }
     }
-    fornix.forEach(e=>cuentas(e.accountId, e.token, e.autoTrade, e.nombre, e.RF))
+    fornix.forEach(e=>cuentas(e.accountId, e.token, e.autoTrade, e.nombre, e.RF, e.botId))
   } 
   });
 
