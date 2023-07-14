@@ -158,19 +158,19 @@ startMinuto = 51;
  });
 
 // Time to sleep 
- sleepHora = 0;
- sleepMinuto = 43;
+//  sleepHora = 0;
+//  sleepMinuto = 43;
  
- var rule = new schedule.RecurrenceRule();
-  rule.dayOfWeek = 5;
-  rule.hour = +sleepHora;
-  rule.minute = +sleepMinuto;
-  var j = schedule.scheduleJob(rule, function(){
-     scheduleTrading = false; 
-     console.log(" 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening');
-     bot.sendMessage(-1001565358230, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
+//  var rule = new schedule.RecurrenceRule();
+//   rule.dayOfWeek = 5;
+//   rule.hour = +sleepHora;
+//   rule.minute = +sleepMinuto;
+//   var j = schedule.scheduleJob(rule, function(){
+//      scheduleTrading = false; 
+//      console.log(" 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening');
+//      bot.sendMessage(-1001565358230, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
  
-  });
+//   });
  
 // Time to wake up 
 wakeHora = 21;
