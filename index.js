@@ -37,7 +37,7 @@ const fornix = [
   token:"5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe",
   nombre:"Ger Challenge",
   autoTrade:true,
-  RF:0.02,
+  RF:0.05,
   botId:-1001565358230},
 
 // Cuenta Ger DEMO
