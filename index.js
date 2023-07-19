@@ -189,7 +189,7 @@ var rule = new schedule.RecurrenceRule();
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
     console.log(" 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
-    bot.sendMessage(-1001565358230, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
+    bot.sendMessage(-1001565358230, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
     bot.sendMessage(-928777684, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
 
 
@@ -250,6 +250,8 @@ app.use(bodyParser.json());
           bot.sendMessage(-928777684, " 🗞️  Tony´s NEWS: "  + "\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
 
           bot.sendMessage(1295846107, " 🗞️  Fornix´s NEWS: "  + "\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
+
+          bot.sendMessage(1650845575, " 🗞️  Fornix´s NEWS: "  + "\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
 
           console.log("impact: ", impact);
           } catch (err) {
