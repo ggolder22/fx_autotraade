@@ -527,6 +527,8 @@ app.get("/information", async (req, res) => {
       await connection.getAccountInformation();
     pos = await connection.getPositions();
     historyOrders = await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date());
+    stadisticas= await metaStats.getMetrics(accountId, true);
+    console.log("Estadistica: ", stadisticas);
   
     
     //console.log("pos",pos);
