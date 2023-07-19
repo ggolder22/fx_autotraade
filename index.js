@@ -59,7 +59,7 @@ const fornix = [
   {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
   token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
   nombre:"Tony Real",
- autoTrade:true,
+ autoTrade:false,
   RF :0.005,
   botId:-928777684}
 
