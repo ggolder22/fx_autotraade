@@ -543,6 +543,7 @@ app.get("/information", async (req, res) => {
       login: login,
       pos: { pos },
       historyOrders : {historyOrders},
+      stadistica: {stadisticas}
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
