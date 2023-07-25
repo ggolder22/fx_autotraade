@@ -42,11 +42,12 @@ const fornix = [
   botId:-1001565358230},
 
 // Cuenta Ger DEMO
-  // {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2", 
-  // token:"3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru",
-  // nombre:"German DEMO",
-  // autoTrade:true,
-  // RF:0.005},
+  {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2", 
+  token:"3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru",
+  nombre:"German DEMO",
+  autoTrade:true,
+  RF:0.005,
+  botId:-1001565358230},
 
 //Cuenta Tony Challenge
   {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
@@ -60,7 +61,7 @@ const fornix = [
   {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
   token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
   nombre:"Tony Real",
- autoTrade:true,
+ autoTrade:false,
   RF :0.005,
   botId:-928777684}
 
