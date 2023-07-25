@@ -520,16 +520,16 @@ console.log("que: ", ventas);
 
 app.get("/information", async (req, res) => {
   try {
-    const metaStats = new MetaStats("5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe");
-    const api = new MetaApi("5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe");
-    const account = await api.metatraderAccountApi.getAccount("bcba90b4-f5a0-4360-963d-47e0e6b91b27");
+    const metaStats = new MetaStats("3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru");
+    const api = new MetaApi("3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru");
+    const account = await api.metatraderAccountApi.getAccount("06efc5c1-1ce3-424b-aff4-13af1cbd76b2");
     let connection = account.getRPCConnection();
     await connection.connect();
     const { broker, balance, equity, login } =
       await connection.getAccountInformation();
     pos = await connection.getPositions();
     historyOrders = await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date());
-    stadisticas= await metaStats.getMetrics("bcba90b4-f5a0-4360-963d-47e0e6b91b27", true);
+    stadisticas= await metaStats.getMetrics("06efc5c1-1ce3-424b-aff4-13af1cbd76b2", true);
     console.log("Estadistica: ", stadisticas);
   
     
