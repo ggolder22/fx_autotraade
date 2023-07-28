@@ -45,7 +45,7 @@ const fornix = [
   {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2", 
   token:"eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNjczNzg0NGMxZDcyNGE0NDg4YzM1ZGMyZDU0ODg0MSIsInBlcm1pc3Npb25zIjpbXSwiYWNjZXNzUnVsZXMiOlt7ImlkIjoidHJhZGluZy1hY2NvdW50LW1hbmFnZW1lbnQtYXBpIiwibWV0aG9kcyI6WyJ0cmFkaW5nLWFjY291bnQtbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19LHsiaWQiOiJtZXRhYXBpLXJlc3QtYXBpIiwibWV0aG9kcyI6WyJtZXRhYXBpLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIiwid3JpdGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6Im1ldGFhcGktcnBjLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YWFwaS1yZWFsLXRpbWUtc3RyZWFtaW5nLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YXN0YXRzLWFwaSIsIm1ldGhvZHMiOlsibWV0YXN0YXRzLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6InJpc2stbWFuYWdlbWVudC1hcGkiLCJtZXRob2RzIjpbInJpc2stbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19XSwidG9rZW5JZCI6IjIwMjEwMjEzIiwiaW1wZXJzb25hdGVkIjpmYWxzZSwicmVhbFVzZXJJZCI6ImU2NzM3ODQ0YzFkNzI0YTQ0ODhjMzVkYzJkNTQ4ODQxIiwiaWF0IjoxNjkwNTU3MDAyfQ.bQYLJLwACKoPxIaDyArZQISAPEfyLV5qdBioQgFmR82e6Su1LMYTNnld0h7kQRARlOrbVLTpAQrG4JLxX_kdb3egzqYTAOGyLI5onk3DWc-eWoRQyV4w5VX-tuLr9IbtfbIfKejxODxe7AwtBdanh0Wxw1Msjv-kqjVU07YJHhvuu9tgMq2DNuFwDnbNiDQN8rPoJcm_fE1dHhCAx7RfK--LZZIBuN564aKBB69qG09yn9DxmaE2WguPwyLhiFcpSMbTDwPPmXi9i3h-TxttRP6RA-KhO6XbK70tipAPfwtGJ2F5_sEfBDpBT4NxIiKMRr-__AiUfsLwmGAkkMqmoO-L7Lc_0Mesz26SP-ATpvS06-VDT0EKMBAc62O4JwdWhqVQJ1-qpXGA4grigitw6AE8eq6sRw50a5cta07wNFKq57nFyXWHbOwRH2kjsZ4amBhS8GZnlwyvWbg2W95ofDpaukGXgrtnUabIzUIdCT2MAI3cy4LO7bcyAQ44ebJKlT83MrfDde8187ukwIIzGj9vY2WnX31UKPjIm-pq3gaKxAu6VTz9GhU-bOPOUMICdnJCWEhIW-4jeybrxeFkfJkKO-2qF4qepbJpJ8k-xLlADfggyTVYgkryJQ3a2QZ7KYoAYJYCF2JIk_kuY45eCda9oIObwh2NCmQYWSt1C58",
   nombre:"German DEMO",
-  autoTrade:true,
+  autoTrade:false,
   RF:0.005,
   botId:-1001565358230},
 
@@ -282,14 +282,14 @@ app.use(bodyParser.json());
       if (e == "TP2") return { TP2: tradeSplit[i + 1] };
       if (e == "TP3") return { TP3: tradeSplit[i + 1] };
       if (e == "TP4") return { TP4: tradeSplit[i + 1] };
-      if (e == "TP5") return { TP5: tradeSplit[i + 1] };
-      if (e == "TP6") return { TP6: tradeSplit[i + 1] };
+      //if (e == "TP5") return { TP5: tradeSplit[i + 1] };
+      //if (e == "TP6") return { TP6: tradeSplit[i + 1] };
       if (e == "PS1") return { PS1: tradeSplit[i + 1] };
       if (e == "PS2") return { PS2: tradeSplit[i + 1] };
       if (e == "PS3") return { PS3: tradeSplit[i + 1] };
       if (e == "PS4") return { PS4: tradeSplit[i + 1] };
-      if (e == "PS5") return { PS5: tradeSplit[i + 1] };
-      if (e == "PS6") return { PS6: tradeSplit[i + 1] };
+      //if (e == "PS5") return { PS5: tradeSplit[i + 1] };
+      //if (e == "PS6") return { PS6: tradeSplit[i + 1] };
       if (e == "TSL") return { TSL: tradeSplit[i + 1] };
     });
 
@@ -315,10 +315,10 @@ app.use(bodyParser.json());
       PS3,
       TP4,
       PS4,
-      TP5,
-      PS5,
-      TP6,
-      PS6,
+      //TP5,
+      //PS5,
+      //TP6,
+      //PS6,
       TSL
     } = tradeFinal;
 
@@ -374,8 +374,8 @@ app.use(bodyParser.json());
       let tp2InPips = Math.abs(Math.round((+TP2 - Entry) / multiplier));
       let tp3InPips = Math.abs(Math.round((+TP3 - Entry) / multiplier));
       let tp4InPips = Math.abs(Math.round((+TP4 - Entry) / multiplier));
-      let tp5InPips = Math.abs(Math.round((+TP5 - Entry) / multiplier));
-      let tp6InPips = Math.abs(Math.round((+TP6 - Entry) / multiplier));
+      //let tp5InPips = Math.abs(Math.round((+TP5 - Entry) / multiplier));
+      //let tp6InPips = Math.abs(Math.round((+TP6 - Entry) / multiplier));
 
 
 
@@ -392,11 +392,17 @@ app.use(bodyParser.json());
       size2 = (+positionSize * +PS2).toFixed(2);
       size3 = (+positionSize * +PS3).toFixed(2);
       size4 = (+positionSize * +PS4).toFixed(2);
-      size5 = (+positionSize * +PS5).toFixed(2);
-      size6 = (+positionSize * +PS6).toFixed(2);
+      //size5 = (+positionSize * +PS5).toFixed(2);
+      //size6 = (+positionSize * +PS6).toFixed(2);
      
-      const posize = [+size1, +size2, +size3, +size4, +size5, +size6];
-      const tptp = [+TP1, +TP2, +TP3, +TP4, +TP5, +TP6];
+      const posize = [+size1, +size2, +size3, +size4 
+        //+size5, 
+        //+size6
+      ];
+      const tptp = [+TP1, +TP2, +TP3, +TP4, 
+        //+TP5, 
+        //+TP6
+      ];
       
    
     
@@ -405,15 +411,18 @@ app.use(bodyParser.json());
       
       // Telegram message a canal de german
       bot.sendMessage(botId, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
-        "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
+        "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + 
+        //"\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
          "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
          "\nTP1: " + (tp1InPips * size1 )*10 +
          "\nTP2: " + (tp2InPips * size2 )*10 +
          "\nTP3: " + (tp3InPips * size3 )*10 +
          "\nTP4: " + (tp4InPips * size4 )*10 +
-         "\nTP5: " + (tp5InPips * size5 )*10 +
-         "\nTP6: " + (tp6InPips * size6 )*10 + 
-         "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
+        //  "\nTP5: " + (tp5InPips * size5 )*10 +
+        //  "\nTP6: " + (tp6InPips * size6 )*10 + 
+         "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) 
+         //(tp5InPips * size5 ) + (tp6InPips * size6 )
+         )*10 +
          "\n\nwww.trivialfunction.com"
          ) 
       
@@ -423,7 +432,7 @@ app.use(bodyParser.json());
       if (orderType == "BUY")
           
         
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 4; i++) {
           result = await connection.createMarketBuyOrder(
             tikcer,
             +posize[i],
@@ -444,7 +453,7 @@ app.use(bodyParser.json());
         
         }
       else if (orderType == "SELL") 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 4; i++) {
           result = await connection.createMarketSellOrder(
             tikcer,
             +posize[i],
