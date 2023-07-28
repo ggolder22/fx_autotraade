@@ -540,9 +540,14 @@ app.use(bodyParser.json());
       
       } else if (orderType == "CLOSEID") {
         result = await connection.closePosition(orderId)
-      }
+      } else if (orderType == "MODIFYID") {
+      result = await connection.modifyPosition(
+        +tikcer,
+        +SL
 
-
+      )
+      
+    }
     }
       console.log("Trade successful, result code is " + result.stringCode);
       console.log("Order ID: ", ventas); 
