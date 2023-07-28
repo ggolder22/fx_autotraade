@@ -368,7 +368,9 @@ app.use(bodyParser.json());
       }else if (tikcer == "USDJPY") {
         multiplier = 0.01;
 
-      }else multiplier = 0.0001;
+      }else {
+        multiplier = 0.0001;
+      }
 
     
 
