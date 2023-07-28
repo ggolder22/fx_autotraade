@@ -441,7 +441,7 @@ app.use(bodyParser.json());
       console.log("Submitting pending order");
 
       
-      if (orderType == "BUY")
+      if (orderType == "BUY"){
           
         
         for (let i = 0; i < 4; i++) {
@@ -464,7 +464,8 @@ app.use(bodyParser.json());
           
         
         }
-      else if (orderType == "SELL") 
+
+      } else if (orderType == "SELL") { 
         for (let i = 0; i < 4; i++) {
           result = await connection.createMarketSellOrder(
             tikcer,
@@ -486,11 +487,60 @@ app.use(bodyParser.json());
           
         }
 
-      else if (orderType == "CLOSE") 
+      } else if (orderType == "LIMITBUY"){
+        
+        for (let i = 0; i < 4; i++) {
+          result = await connection.createLimitBuyOrder(
+            tikcer,
+            +posize[i],
+            +Entry,
+            +SL,
+            +tptp[i], {trailingStopLoss:{"threshold": {
+              "thresholds": [
+                {
+                  "threshold": +TSL,
+                  "stopLoss": +Entry
+                }
+              ],
+              "units": "ABSOLUTE_PRICE",
+              "stopPriceBase": "CURRENT_PRICE"
+            }}}, 
+            
+          );
+          
+        
+        }
+      
+      } else if (orderType == "LIMITSELL"){
+        for (let i = 0; i < 4; i++) {
+          result = await connection.createLimitSellOrder(
+            tikcer,
+            +posize[i],
+            +Entry,
+            +SL,
+            +tptp[i], {trailingStopLoss:{"threshold": {
+              "thresholds": [
+                {
+                  "threshold": +TSL,
+                  "stopLoss": +Entry
+                }
+              ],
+              "units": "ABSOLUTE_PRICE",
+              "stopPriceBase": "CURRENT_PRICE"
+            }}}, 
+            
+          );
+          
+        
+        }
+      
+      
+      }else if (orderType == "CLOSE") { 
         result = await connection.closePositionsBySymbol(tikcer)
       
-      else if (orderType == "CLOSEID")
+      } else if (orderType == "CLOSEID") {
         result = await connection.closePosition(orderId)
+      }
 
 
     }
