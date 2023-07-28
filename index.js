@@ -358,11 +358,17 @@ app.use(bodyParser.json());
       
       //calculate multiplier
 
-      if (tikcer == "XAUUSD") multiplier = 0.1;
-      else if (tikcer == "XAGUSD") multiplier = 0.001;
+      if (tikcer == "XAUUSD") {
+        multiplier = 0.1;
+      
+      }else if (tikcer == "XAGUSD") {
+        multiplier = 0.001;
       //else if(str(trade['Entry']).index('.') >= 2):
       //    multiplier = 0.01
-      else multiplier = 0.0001;
+      }else if (tikcer == "USDJPY") {
+        multiplier = 0.01;
+
+      }else multiplier = 0.0001;
 
     
 
@@ -382,7 +388,7 @@ app.use(bodyParser.json());
       //  calculates the position size using stop loss and RISK FACTOR
 
       let positionSize = Math.floor(((balance * RF) / stopLossPips) / 10 * 100) / 100;
-      
+      console.log(positionSize);
 
       
     
