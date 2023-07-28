@@ -43,7 +43,7 @@ const fornix = [
 
 // Cuenta Ger DEMO
   {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2", 
-  token:"3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru",
+  token:"eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNjczNzg0NGMxZDcyNGE0NDg4YzM1ZGMyZDU0ODg0MSIsInBlcm1pc3Npb25zIjpbXSwiYWNjZXNzUnVsZXMiOlt7ImlkIjoidHJhZGluZy1hY2NvdW50LW1hbmFnZW1lbnQtYXBpIiwibWV0aG9kcyI6WyJ0cmFkaW5nLWFjY291bnQtbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19LHsiaWQiOiJtZXRhYXBpLXJlc3QtYXBpIiwibWV0aG9kcyI6WyJtZXRhYXBpLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIiwid3JpdGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6Im1ldGFhcGktcnBjLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YWFwaS1yZWFsLXRpbWUtc3RyZWFtaW5nLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YXN0YXRzLWFwaSIsIm1ldGhvZHMiOlsibWV0YXN0YXRzLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6InJpc2stbWFuYWdlbWVudC1hcGkiLCJtZXRob2RzIjpbInJpc2stbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19XSwidG9rZW5JZCI6IjIwMjEwMjEzIiwiaW1wZXJzb25hdGVkIjpmYWxzZSwicmVhbFVzZXJJZCI6ImU2NzM3ODQ0YzFkNzI0YTQ0ODhjMzVkYzJkNTQ4ODQxIiwiaWF0IjoxNjkwNTU3MDAyfQ.bQYLJLwACKoPxIaDyArZQISAPEfyLV5qdBioQgFmR82e6Su1LMYTNnld0h7kQRARlOrbVLTpAQrG4JLxX_kdb3egzqYTAOGyLI5onk3DWc-eWoRQyV4w5VX-tuLr9IbtfbIfKejxODxe7AwtBdanh0Wxw1Msjv-kqjVU07YJHhvuu9tgMq2DNuFwDnbNiDQN8rPoJcm_fE1dHhCAx7RfK--LZZIBuN564aKBB69qG09yn9DxmaE2WguPwyLhiFcpSMbTDwPPmXi9i3h-TxttRP6RA-KhO6XbK70tipAPfwtGJ2F5_sEfBDpBT4NxIiKMRr-__AiUfsLwmGAkkMqmoO-L7Lc_0Mesz26SP-ATpvS06-VDT0EKMBAc62O4JwdWhqVQJ1-qpXGA4grigitw6AE8eq6sRw50a5cta07wNFKq57nFyXWHbOwRH2kjsZ4amBhS8GZnlwyvWbg2W95ofDpaukGXgrtnUabIzUIdCT2MAI3cy4LO7bcyAQ44ebJKlT83MrfDde8187ukwIIzGj9vY2WnX31UKPjIm-pq3gaKxAu6VTz9GhU-bOPOUMICdnJCWEhIW-4jeybrxeFkfJkKO-2qF4qepbJpJ8k-xLlADfggyTVYgkryJQ3a2QZ7KYoAYJYCF2JIk_kuY45eCda9oIObwh2NCmQYWSt1C58",
   nombre:"German DEMO",
   autoTrade:true,
   RF:0.005,
@@ -416,34 +416,7 @@ app.use(bodyParser.json());
          "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
          "\n\nwww.trivialfunction.com"
          ) 
-      // // Telegram message a canal de tony
-      //    bot.sendMessage(-928777684, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
-      //    "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
-      //     "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
-      //     "\nTP1: " + (tp1InPips * size1 )*10 +
-      //     "\nTP2: " + (tp2InPips * size2 )*10 +
-      //     "\nTP3: " + (tp3InPips * size3 )*10 +
-      //     "\nTP4: " + (tp4InPips * size4 )*10 +
-      //     "\nTP5: " + (tp5InPips * size5 )*10 +
-      //     "\nTP6: " + (tp6InPips * size6 )*10 + 
-      //     "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
-      //     "\n\nwww.trivialfunction.com"
-      //     ) 
       
-      // console.log("🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
-      //   "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + "\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
-      //    "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
-      //    "\nTP1: " + (tp1InPips * size1 )*10 +
-      //    "\nTP2: " + (tp2InPips * size2 )*10 +
-      //    "\nTP3: " + (tp3InPips * size3 )*10 +
-      //    "\nTP4: " + (tp4InPips * size4 )*10 +
-      //    "\nTP5: " + (tp5InPips * size5 )*10 +
-      //    "\nTP6: " + (tp6InPips * size6 )*10 + 
-      //    "\n\nTotal Profit: " + ((tp1InPips * size1) + (tp2InPips * size2 ) + (tp3InPips * size3 ) + (tp4InPips * size4 ) + (tp5InPips * size5 ) + (tp6InPips * size6 ))*10 +
-      //    "\n\nwww.trivialfunction.com"
-      //    ) 
-
-
       console.log("Submitting pending order");
 
       
@@ -521,8 +494,8 @@ console.log("que: ", ventas);
 
 app.get("/information", async (req, res) => {
   try {
-    const metaStats = new MetaStats("3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru");
-    const api = new MetaApi("3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru");
+    const metaStats = new MetaStats("eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNjczNzg0NGMxZDcyNGE0NDg4YzM1ZGMyZDU0ODg0MSIsInBlcm1pc3Npb25zIjpbXSwiYWNjZXNzUnVsZXMiOlt7ImlkIjoidHJhZGluZy1hY2NvdW50LW1hbmFnZW1lbnQtYXBpIiwibWV0aG9kcyI6WyJ0cmFkaW5nLWFjY291bnQtbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19LHsiaWQiOiJtZXRhYXBpLXJlc3QtYXBpIiwibWV0aG9kcyI6WyJtZXRhYXBpLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIiwid3JpdGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6Im1ldGFhcGktcnBjLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YWFwaS1yZWFsLXRpbWUtc3RyZWFtaW5nLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YXN0YXRzLWFwaSIsIm1ldGhvZHMiOlsibWV0YXN0YXRzLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6InJpc2stbWFuYWdlbWVudC1hcGkiLCJtZXRob2RzIjpbInJpc2stbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19XSwidG9rZW5JZCI6IjIwMjEwMjEzIiwiaW1wZXJzb25hdGVkIjpmYWxzZSwicmVhbFVzZXJJZCI6ImU2NzM3ODQ0YzFkNzI0YTQ0ODhjMzVkYzJkNTQ4ODQxIiwiaWF0IjoxNjkwNTU3MDAyfQ.bQYLJLwACKoPxIaDyArZQISAPEfyLV5qdBioQgFmR82e6Su1LMYTNnld0h7kQRARlOrbVLTpAQrG4JLxX_kdb3egzqYTAOGyLI5onk3DWc-eWoRQyV4w5VX-tuLr9IbtfbIfKejxODxe7AwtBdanh0Wxw1Msjv-kqjVU07YJHhvuu9tgMq2DNuFwDnbNiDQN8rPoJcm_fE1dHhCAx7RfK--LZZIBuN564aKBB69qG09yn9DxmaE2WguPwyLhiFcpSMbTDwPPmXi9i3h-TxttRP6RA-KhO6XbK70tipAPfwtGJ2F5_sEfBDpBT4NxIiKMRr-__AiUfsLwmGAkkMqmoO-L7Lc_0Mesz26SP-ATpvS06-VDT0EKMBAc62O4JwdWhqVQJ1-qpXGA4grigitw6AE8eq6sRw50a5cta07wNFKq57nFyXWHbOwRH2kjsZ4amBhS8GZnlwyvWbg2W95ofDpaukGXgrtnUabIzUIdCT2MAI3cy4LO7bcyAQ44ebJKlT83MrfDde8187ukwIIzGj9vY2WnX31UKPjIm-pq3gaKxAu6VTz9GhU-bOPOUMICdnJCWEhIW-4jeybrxeFkfJkKO-2qF4qepbJpJ8k-xLlADfggyTVYgkryJQ3a2QZ7KYoAYJYCF2JIk_kuY45eCda9oIObwh2NCmQYWSt1C58");
+    const api = new MetaApi("eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNjczNzg0NGMxZDcyNGE0NDg4YzM1ZGMyZDU0ODg0MSIsInBlcm1pc3Npb25zIjpbXSwiYWNjZXNzUnVsZXMiOlt7ImlkIjoidHJhZGluZy1hY2NvdW50LW1hbmFnZW1lbnQtYXBpIiwibWV0aG9kcyI6WyJ0cmFkaW5nLWFjY291bnQtbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19LHsiaWQiOiJtZXRhYXBpLXJlc3QtYXBpIiwibWV0aG9kcyI6WyJtZXRhYXBpLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIiwid3JpdGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6Im1ldGFhcGktcnBjLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YWFwaS1yZWFsLXRpbWUtc3RyZWFtaW5nLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YXN0YXRzLWFwaSIsIm1ldGhvZHMiOlsibWV0YXN0YXRzLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6InJpc2stbWFuYWdlbWVudC1hcGkiLCJtZXRob2RzIjpbInJpc2stbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19XSwidG9rZW5JZCI6IjIwMjEwMjEzIiwiaW1wZXJzb25hdGVkIjpmYWxzZSwicmVhbFVzZXJJZCI6ImU2NzM3ODQ0YzFkNzI0YTQ0ODhjMzVkYzJkNTQ4ODQxIiwiaWF0IjoxNjkwNTU3MDAyfQ.bQYLJLwACKoPxIaDyArZQISAPEfyLV5qdBioQgFmR82e6Su1LMYTNnld0h7kQRARlOrbVLTpAQrG4JLxX_kdb3egzqYTAOGyLI5onk3DWc-eWoRQyV4w5VX-tuLr9IbtfbIfKejxODxe7AwtBdanh0Wxw1Msjv-kqjVU07YJHhvuu9tgMq2DNuFwDnbNiDQN8rPoJcm_fE1dHhCAx7RfK--LZZIBuN564aKBB69qG09yn9DxmaE2WguPwyLhiFcpSMbTDwPPmXi9i3h-TxttRP6RA-KhO6XbK70tipAPfwtGJ2F5_sEfBDpBT4NxIiKMRr-__AiUfsLwmGAkkMqmoO-L7Lc_0Mesz26SP-ATpvS06-VDT0EKMBAc62O4JwdWhqVQJ1-qpXGA4grigitw6AE8eq6sRw50a5cta07wNFKq57nFyXWHbOwRH2kjsZ4amBhS8GZnlwyvWbg2W95ofDpaukGXgrtnUabIzUIdCT2MAI3cy4LO7bcyAQ44ebJKlT83MrfDde8187ukwIIzGj9vY2WnX31UKPjIm-pq3gaKxAu6VTz9GhU-bOPOUMICdnJCWEhIW-4jeybrxeFkfJkKO-2qF4qepbJpJ8k-xLlADfggyTVYgkryJQ3a2QZ7KYoAYJYCF2JIk_kuY45eCda9oIObwh2NCmQYWSt1C58");
     const account = await api.metatraderAccountApi.getAccount("06efc5c1-1ce3-424b-aff4-13af1cbd76b2");
     let connection = account.getRPCConnection();
     await connection.connect();
