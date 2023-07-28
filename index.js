@@ -42,28 +42,28 @@ const fornix = [
   botId:-1001565358230},
 
 // Cuenta Ger DEMO
-  {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2", 
-  token:"eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlNjczNzg0NGMxZDcyNGE0NDg4YzM1ZGMyZDU0ODg0MSIsInBlcm1pc3Npb25zIjpbXSwiYWNjZXNzUnVsZXMiOlt7ImlkIjoidHJhZGluZy1hY2NvdW50LW1hbmFnZW1lbnQtYXBpIiwibWV0aG9kcyI6WyJ0cmFkaW5nLWFjY291bnQtbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19LHsiaWQiOiJtZXRhYXBpLXJlc3QtYXBpIiwibWV0aG9kcyI6WyJtZXRhYXBpLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIiwid3JpdGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6Im1ldGFhcGktcnBjLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YWFwaS1yZWFsLXRpbWUtc3RyZWFtaW5nLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbImFjY291bnQ6JFVTRVJfSUQkOjA2ZWZjNWMxLTFjZTMtNDI0Yi1hZmY0LTEzYWYxY2JkNzZiMiJdfSx7ImlkIjoibWV0YXN0YXRzLWFwaSIsIm1ldGhvZHMiOlsibWV0YXN0YXRzLWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIl0sInJlc291cmNlcyI6WyJhY2NvdW50OiRVU0VSX0lEJDowNmVmYzVjMS0xY2UzLTQyNGItYWZmNC0xM2FmMWNiZDc2YjIiXX0seyJpZCI6InJpc2stbWFuYWdlbWVudC1hcGkiLCJtZXRob2RzIjpbInJpc2stbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiYWNjb3VudDokVVNFUl9JRCQ6MDZlZmM1YzEtMWNlMy00MjRiLWFmZjQtMTNhZjFjYmQ3NmIyIl19XSwidG9rZW5JZCI6IjIwMjEwMjEzIiwiaW1wZXJzb25hdGVkIjpmYWxzZSwicmVhbFVzZXJJZCI6ImU2NzM3ODQ0YzFkNzI0YTQ0ODhjMzVkYzJkNTQ4ODQxIiwiaWF0IjoxNjkwNTU3MDAyfQ.bQYLJLwACKoPxIaDyArZQISAPEfyLV5qdBioQgFmR82e6Su1LMYTNnld0h7kQRARlOrbVLTpAQrG4JLxX_kdb3egzqYTAOGyLI5onk3DWc-eWoRQyV4w5VX-tuLr9IbtfbIfKejxODxe7AwtBdanh0Wxw1Msjv-kqjVU07YJHhvuu9tgMq2DNuFwDnbNiDQN8rPoJcm_fE1dHhCAx7RfK--LZZIBuN564aKBB69qG09yn9DxmaE2WguPwyLhiFcpSMbTDwPPmXi9i3h-TxttRP6RA-KhO6XbK70tipAPfwtGJ2F5_sEfBDpBT4NxIiKMRr-__AiUfsLwmGAkkMqmoO-L7Lc_0Mesz26SP-ATpvS06-VDT0EKMBAc62O4JwdWhqVQJ1-qpXGA4grigitw6AE8eq6sRw50a5cta07wNFKq57nFyXWHbOwRH2kjsZ4amBhS8GZnlwyvWbg2W95ofDpaukGXgrtnUabIzUIdCT2MAI3cy4LO7bcyAQ44ebJKlT83MrfDde8187ukwIIzGj9vY2WnX31UKPjIm-pq3gaKxAu6VTz9GhU-bOPOUMICdnJCWEhIW-4jeybrxeFkfJkKO-2qF4qepbJpJ8k-xLlADfggyTVYgkryJQ3a2QZ7KYoAYJYCF2JIk_kuY45eCda9oIObwh2NCmQYWSt1C58",
+  {accountId:"dacc3da5-5dd5-490d-a73a-3ed687554c4b", 
+  token:"3KMHwtECqT5xjUPkVNEUE5RacbajAKbKwzNgfFyB1xboGJEG9GchXHuDm6eR1HQJ",
   nombre:"German DEMO",
-  autoTrade:false,
+  autoTrade:true,
   RF:0.005,
   botId:-1001565358230},
 
-//Cuenta Tony Challenge
-  {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
-  token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
-  nombre:"Tony Challenge",
-  autoTrade:false,
-  RF:0.016,
-  botId:-928777684},
+// //Cuenta Tony Challenge
+//   {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
+//   token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
+//   nombre:"Tony Challenge",
+//   autoTrade:false,
+//   RF:0.016,
+//   botId:-928777684},
 
-//Cuenta Real Tony
-  {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
-  token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
-  nombre:"Tony Real",
- autoTrade:false,
-  RF :0.005,
-  botId:-928777684}
+// //Cuenta Real Tony
+//   {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
+//   token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
+//   nombre:"Tony Real",
+//  autoTrade:false,
+//   RF :0.005,
+//   botId:-928777684}
 
 ]
 
