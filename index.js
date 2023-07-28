@@ -375,6 +375,9 @@ app.use(bodyParser.json());
       //calculates the stop loss in pips
       let stopLossPips = Math.abs(Math.round((+SL - Entry) / multiplier));
 
+      console.log("Multiplier: ", multiplier);
+      console.log("SL PIPS: ", stopLossPips);
+
       //Calculate de takes profits pips
       let tp1InPips = Math.abs(Math.round((+TP1 - Entry) / multiplier));
       let tp2InPips = Math.abs(Math.round((+TP2 - Entry) / multiplier));
@@ -388,7 +391,8 @@ app.use(bodyParser.json());
       //  calculates the position size using stop loss and RISK FACTOR
 
       let positionSize = Math.floor(((balance * RF) / stopLossPips) / 10 * 100) / 100;
-      console.log(positionSize);
+      
+      console.log("Lote size: ", positionSize);
 
       
     
