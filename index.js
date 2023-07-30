@@ -601,6 +601,7 @@ app.get("/information", async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
+    console.log("Error: ", error.message);
   }
   
 });
