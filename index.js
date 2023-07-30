@@ -580,9 +580,9 @@ app.get("/information", async (req, res) => {
     await connection.connect();
     const { broker, balance, equity, login } =
       await connection.getAccountInformation("06efc5c1-1ce3-424b-aff4-13af1cbd76b2");
-    //pos = await connection.getPositions();
-    //historyOrders = await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date());
-    //stadisticas= await metaStats.getMetrics("06efc5c1-1ce3-424b-aff4-13af1cbd76b2", true);
+    pos = await connection.getPositions();
+    historyOrders = await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date());
+    stadisticas= await metaStats.getMetrics("06efc5c1-1ce3-424b-aff4-13af1cbd76b2", true);
     
     console.log("Estadistica: ", stadisticas);
   
