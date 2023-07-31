@@ -42,7 +42,7 @@ const fornix = [
   token:"3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru",
   nombre:"Ger Challenge",
   autoTrade:true,
-  RF:0.05,
+  RF:0.01,
   botId:-1001565358230},
 
 // Cuenta Ger DEMO FTMO TIPO Challenge
@@ -50,7 +50,7 @@ const fornix = [
   token:"3KMHwtECqT5xjUPkVNEUE5RacbajAKbKwzNgfFyB1xboGJEG9GchXHuDm6eR1HQJ",
   nombre:"German DEMO",
   autoTrade:true,
-  RF:0.05,
+  RF:0.01,
   botId:-1001565358230},
 
 // //Cuenta Tony Challenge
