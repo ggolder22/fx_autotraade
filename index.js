@@ -1,17 +1,19 @@
-const express = require("express");
-const bodyParser = require("body-parser");
 
 //Telegram
 const TelegramBot = require('node-telegram-bot-api');
 const {token} = process.env;
 const bot = new TelegramBot(token, {polling: true});
 
+//Meta API
+let MetaApi = require("metaapi.cloud-sdk").default;
+let MetaStats = require("metaapi.cloud-sdk").MetaStats; 
 
+//Express
+const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
-let MetaApi = require("metaapi.cloud-sdk").default;
-let MetaStats = require("metaapi.cloud-sdk").MetaStats; 
 
 // Permisos para que podamos acceder a la informacion desde afuera
 app.use((req, res, next) => {
@@ -32,21 +34,23 @@ bot.onText(/^\/chatid/, (msg) => {
   bot.sendMessage(chatId, "El id de este chat es: " + chatId);  
 });
 
+
+
 const fornix = [
-//Cuenta Ger Challenge
-  {accountId:"bcba90b4-f5a0-4360-963d-47e0e6b91b27",
-  token:"5UrE6Z48u2dRgo8s84FJm12Q97A1AN9B7d4PGbmfS474T18f54EaDmNpc4WwKMBe",
+//Cuenta Ger DEMO Meta quotes
+  {accountId:"06efc5c1-1ce3-424b-aff4-13af1cbd76b2",
+  token:"3qB8zuMywP3ESk6gSj1EoAyoXZKb6C1EU2o1ySJSLWuo6voKbjiK1StCKudpcYru",
   nombre:"Ger Challenge",
-  autoTrade:false,
+  autoTrade:true,
   RF:0.05,
   botId:-1001565358230},
 
-// Cuenta Ger DEMO
+// Cuenta Ger DEMO FTMO TIPO Challenge
   {accountId:"dacc3da5-5dd5-490d-a73a-3ed687554c4b", 
   token:"3KMHwtECqT5xjUPkVNEUE5RacbajAKbKwzNgfFyB1xboGJEG9GchXHuDm6eR1HQJ",
   nombre:"German DEMO",
   autoTrade:true,
-  RF:0.005,
+  RF:0.05,
   botId:-1001565358230},
 
 // //Cuenta Tony Challenge
@@ -107,11 +111,12 @@ SYMBOLS = [
   "BTCUSD",
 ];
 
-let scheduleTrading = true;
- 
-//#region
+
 
 // Scheduling this code will let us stop trading by shcedule -- { 
+  
+  //#region
+let scheduleTrading = true;
   
 var schedule = require('node-schedule');
 
@@ -396,9 +401,7 @@ app.use(bodyParser.json());
       
       console.log("Lote size: ", positionSize);
 
-      
-    
-      
+               
       // Calculate tp´s size
       size1 = (+positionSize * +PS1).toFixed(2);
       size2 = (+positionSize * +PS2).toFixed(2);
