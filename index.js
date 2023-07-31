@@ -428,7 +428,7 @@ app.use(bodyParser.json());
       bot.sendMessage(botId, "🤴 TF PRO SIGNALS 🤴" + "\n\n           Trade Information    " + "\n\nAccount Number: " + login + "\nCuenta de: " + nombre +"\n\nDirection: " + orderType + "\nTicker: " + tikcer + "\n\nSL Pips: " + stopLossPips +
         "\nTP1 Pips: " + tp1InPips + "\nTP2 Pips: " + tp2InPips + "\nTP3 Pips: " + tp3InPips + "\nTP4 Pips: " + tp4InPips + 
         //"\nTP5 Pips: " + tp5InPips + "\nTP6 Pips: " + tp6InPips +
-         "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
+         "\n\nRisk Factor: " + (RF*100)+" %" + "\nLot Size: " + positionSize + "\n\nCurrent Balance:  " + balance + "\nEquity: " + equity +"\nPotencial Loss:  " + (balance * RF) + "\n\nPotential Profits: " +
          "\nTP1: " + (tp1InPips * size1 )*10 +
          "\nTP2: " + (tp2InPips * size2 )*10 +
          "\nTP3: " + (tp3InPips * size3 )*10 +
