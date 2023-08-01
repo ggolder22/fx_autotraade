@@ -53,6 +53,13 @@ const fornix = [
   RF:0.01,
   botId:-1001565358230},
 
+  {accountId:"197ebd33-afbc-42dd-b737-52958283d946", 
+  token:"57yb56ZfM6C4ZsD2kwk82FsrPg8NVrsVdPkLgMyya4S8vPuDPMv5rhL5Pj5kGGbm",
+  nombre:"Pablo Demo",
+  autoTrade:true,
+  RF:0.005,
+  botId:5010802894}
+
 // //Cuenta Tony Challenge
 //   {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
 //   token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
@@ -563,7 +570,8 @@ app.use(bodyParser.json());
       console.log("Trade failed with result code " + err.stringCode);
     }
     }
-    fornix.forEach(e=>cuentas(e.accountId, e.token, e.autoTrade, e.nombre, e.RF, e.botId))
+    fornix.forEach(e=>setTimeout(()=>cuentas(e.accountId, e.token, e.autoTrade, e.nombre, e.RF, e.botId)),0)
+
   } 
   });
 
