@@ -570,7 +570,7 @@ app.use(bodyParser.json());
       console.log("Trade failed with result code " + err.stringCode);
     }
     }
-    fornix.forEach(e=>setTimeout(()=>cuentas(e.accountId, e.token, e.autoTrade, e.nombre, e.RF, e.botId)),0)
+    fornix.forEach(e=>setTimeout(()=>cuentas(e.accountId, e.token, e.autoTrade, e.nombre, e.RF, e.botId)),1)
 
   } 
   });
