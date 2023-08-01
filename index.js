@@ -53,8 +53,8 @@ const fornix = [
   RF:0.01,
   botId:-1001565358230},
 
-  {accountId:"197ebd33-afbc-42dd-b737-52958283d946", 
-  token:"57yb56ZfM6C4ZsD2kwk82FsrPg8NVrsVdPkLgMyya4S8vPuDPMv5rhL5Pj5kGGbm",
+  {accountId:"f4e031c6-04d3-425e-b736-74ce1ed7fc74", 
+  token:"5DXhsQdruM8grMm2ZMxApWjKaLyW86c2dqbbyyPFZ29Y1DNsZemxGcM6UJP4mozb",
   nombre:"Pablo Demo",
   autoTrade:true,
   RF:0.005,
@@ -570,7 +570,8 @@ app.use(bodyParser.json());
       console.log("Trade failed with result code " + err.stringCode);
     }
     }
-    fornix.forEach(e=>setTimeout(()=>cuentas(e.accountId, e.token, e.autoTrade, e.nombre, e.RF, e.botId)),1)
+    //fornix.forEach(e=>setTimeout(()=>cuentas(e.accountId, e.token, e.autoTrade, e.nombre, e.RF, e.botId)),1)
+    fornix.forEach(e=>cuentas(e.accountId, e.token, e.autoTrade, e.nombre, e.RF, e.botId))
 
   } 
   });
