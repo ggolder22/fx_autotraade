@@ -58,15 +58,15 @@ const fornix = [
   nombre:"Pablo Demo",
   autoTrade:true,
   RF:0.005,
-  botId:5010802894}
+  botId:5010802894},
 
-// //Cuenta Tony Challenge
-//   {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
-//   token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
-//   nombre:"Tony Challenge",
-//   autoTrade:false,
-//   RF:0.016,
-//   botId:-928777684},
+//Cuenta Tony Challenge
+  {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
+  token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
+  nombre:"Tony TikMill Demo ACC",
+  autoTrade:false,
+  RF:0.002,
+  botId:-928777684},
 
 // //Cuenta Real Tony
 //   {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
