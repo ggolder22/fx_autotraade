@@ -14,6 +14,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
+const axios = require("axios");
 
 // Permisos para que podamos acceder a la informacion desde afuera
 app.use((req, res, next) => {
