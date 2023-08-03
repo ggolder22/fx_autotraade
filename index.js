@@ -157,8 +157,8 @@ stopMinuto = 49;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = false; 
     console.log(" 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!');
-    bot.sendMessage(-1001565358230, " 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
-    bot.sendMessage(-928777684, " 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
+    bot.sendMessage(1295846107, " 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
+    bot.sendMessage(1718091240, " 🛑 " + (stopHora-3) + ":" + stopMinuto + ' Bot has sttoped its operation due to tricky time!')
 
  });
 
@@ -172,8 +172,8 @@ startMinuto = 51;
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
     console.log(" 🤪 " + (startHora-3) + ":" + startMinuto +' Bot has started its operation its time to make money!');
-    bot.sendMessage(-1001565358230, " 🤪 " + (startHora-3) +":" + startMinuto +' Bot has started its operation its time to make money!')
-    bot.sendMessage(-928777684, " 🤪 " + (startHora-3) +":" + startMinuto +' Bot has started its operation its time to make money!')
+    bot.sendMessage(1295846107, " 🤪 " + (startHora-3) +":" + startMinuto +' Bot has started its operation its time to make money!')
+    bot.sendMessage(1718091240, " 🤪 " + (startHora-3) +":" + startMinuto +' Bot has started its operation its time to make money!')
  });
 
 //Time to sleep 
@@ -187,8 +187,8 @@ startMinuto = 51;
   var j = schedule.scheduleJob(rule, function(){
      scheduleTrading = false; 
      console.log(" 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening');
-     bot.sendMessage(-1001565358230, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
-     bot.sendMessage(-928777684, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
+     bot.sendMessage(1295846107, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
+     bot.sendMessage(1718091240, " 🛑 " + "21" + ":" + sleepMinuto + ' Bot: Im going to sleep know. Market is out of business!.\nSee you on sunday night, in a market opening!')
  
   });
  
@@ -203,8 +203,8 @@ var rule = new schedule.RecurrenceRule();
  var j = schedule.scheduleJob(rule, function(){
     scheduleTrading = true; 
     console.log(" 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
-    bot.sendMessage(-1001565358230, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
-    bot.sendMessage(-928777684, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
+    bot.sendMessage(1295846107, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money');
+    bot.sendMessage(1718091240, " 👋 " + (wakeHora-3) + ":" + wakeMinuto + ' Hi there bro. Market is opening in few minutes!.\nIts time to make some money')
 
 
  });
@@ -259,9 +259,9 @@ app.use(bodyParser.json());
           if (impact == "High"){ 
           try {
           //mando mensaje a canal de german
-          bot.sendMessage(-1001565358230, " 🗞️  German´s NEWS: " +"\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
+          bot.sendMessage(1295846107, " 🗞️  German´s NEWS: " +"\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
           //mando mensaje a canal de tony
-          bot.sendMessage(-928777684, " 🗞️  Tony´s NEWS: "  + "\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
+          bot.sendMessage(1718091240, " 🗞️  Tony´s NEWS: "  + "\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
 
           bot.sendMessage(1295846107, " 🗞️  Fornix´s NEWS: "  + "\n" + title + "\nImpact: " + impact + "\nMonetary Base: " + country + "\nDate: " + date)
 
