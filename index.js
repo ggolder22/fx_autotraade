@@ -591,16 +591,16 @@ app.get("/information", async (req, res) => {
     let connection = account.getRPCConnection();
     await connection.connect();
     const { broker, balance, equity, login } =
-      await connection.getAccountInformation("0c5961c1-c0ef-4eff-b3bc-c835701c5394");
+      await connection.getAccountInformation("06efc5c1-1ce3-424b-aff4-13af1cbd76b2");
     pos = await connection.getPositions();
     historyOrders = await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date());
-    stadisticas= await metaStats.getMetrics("0c5961c1-c0ef-4eff-b3bc-c835701c5394", true);
+    stadisticas= await metaStats.getMetrics("06efc5c1-1ce3-424b-aff4-13af1cbd76b2", true);
     
-    //console.log("Estadistica: ", stadisticas);
+    console.log("Estadistica: ", stadisticas);
   
     
     //console.log("pos",pos);
-    //console.log("History Orders", historyOrders);
+    console.log("History Orders", historyOrders);
 
     res.status(200).json({
       broker: broker,
