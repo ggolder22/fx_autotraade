@@ -106,7 +106,7 @@ SYMBOLS = [
   "GBPJPY",
   "GBPNZD",
   "GBPUSD",
-  "NOW",
+  //"NOW",
   "NZDCAD",
   "NZDCHF",
   "NZDJPY",
