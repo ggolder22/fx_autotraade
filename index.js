@@ -65,16 +65,16 @@ const fornix = [
   token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
   nombre:"Tony TikMill Demo ACC",
   autoTrade:true,
-  RF:0.005,
+  RF:0.002,
   botId:1718091240},
 
-//Cuenta Real Tony
-  {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
-  token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
-  nombre:"Tony Real",
- autoTrade:false,
-  RF :0.005,
-  botId:1718091240}
+// //Cuenta Real Tony
+//   {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
+//   token:"4k64PKMnEMHf3R5K5edSfEih7KShf58SXnYnjL8XK9zXusTA72Gyh7rmqegF1AoH",
+//   nombre:"Tony Real",
+//  autoTrade:false,
+//   RF :0.005,
+//   botId:-928777684}
 
 ]
 
