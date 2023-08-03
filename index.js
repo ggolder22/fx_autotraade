@@ -43,7 +43,7 @@ const fornix = [
   nombre:"Ger Challenge",
   autoTrade:true,
   RF:0.01,
-  botId:-1001565358230},
+  botId:1295846107},
 
 // Cuenta Ger DEMO FTMO TIPO Challenge
   {accountId:"dacc3da5-5dd5-490d-a73a-3ed687554c4b", 
@@ -51,7 +51,7 @@ const fornix = [
   nombre:"German DEMO",
   autoTrade:true,
   RF:0.01,
-  botId:-1001565358230},
+  botId:1295846107},
 
   {accountId:"f4e031c6-04d3-425e-b736-74ce1ed7fc74", 
   token:"5DXhsQdruM8grMm2ZMxApWjKaLyW86c2dqbbyyPFZ29Y1DNsZemxGcM6UJP4mozb",
@@ -64,9 +64,9 @@ const fornix = [
   {accountId:"f76ea348-442e-4472-9dd8-3715fb4d21a4",
   token:"sbDVoxLVidki7og4tRb2C14A7cb7qRRrd2Bg3EQE34v2gFQJ2ep9SvhgxAbF7p25",
   nombre:"Tony TikMill Demo ACC",
-  autoTrade:false,
+  autoTrade:true,
   RF:0.002,
-  botId:-928777684},
+  botId:1718091240},
 
 // //Cuenta Real Tony
 //   {accountId:"0c5961c1-c0ef-4eff-b3bc-c835701c5394",
