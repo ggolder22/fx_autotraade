@@ -30,6 +30,26 @@ app.use((req, res, next) => {
 
 
 // con este codigo obtengo el chat id de telegram
+bot.onText(/^\/start/, (msg)=>{
+  const chatId = msg.chat.id;
+  bot.sendMessage(chatId, "Thanks for enabeling notifications! Please click return button", {
+    reply_markup:{
+      inline_keyboard:[
+          [
+              {text:"Return", url: 'https://t.me/Labmousse_bot'}
+          ],
+          
+          [
+              {text:"About Fornix", callback_data:"aboutfornix"},
+              {text:"👋 Support", url: 'https://t.me/Germt5_bot'}
+          ]
+      ]
+  }  
+  
+  
+  });
+})
+
 bot.onText(/^\/chatid/, (msg) => {
   const chatId = msg.chat.id;
   bot.sendMessage(chatId, "El id de este chat es: " + chatId);  
